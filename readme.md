@@ -18,5 +18,7 @@ yarn build:type           # 更改生成组件的文件名和和引用
 yarn build:lib            # webpack全部打包 部分包使用import引入
 yarn build:lib-full       # webpack全部打包 全部使用webpack打包
 yarn build:esm            # rollup打包生成css vue ts tsx 生成 js / css
+yarn build:utils          # 打包utils使用babel
+yarn build:theme          # 打包主题 使用gulp打包less样式
 ```
 
