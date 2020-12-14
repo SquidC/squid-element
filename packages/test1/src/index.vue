@@ -1,12 +1,12 @@
 <template>
-  <div>
+  <div class="test1">
     <slot></slot>
   </div>
 </template>
-<script lang='ts'>
+<script lang="ts">
 import { defineComponent } from "vue"
 export default defineComponent({
-  name: "SCIcon",
+  name: "SCTest1",
   props: { },
   setup(props) {
     // init here

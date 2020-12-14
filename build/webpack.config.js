@@ -14,15 +14,13 @@ let externals = [
     },
   },
 ]
+
+// 不是全部引入
+// 以下包使用外部引入
 if (!isFullMode) {
   externals.push({
-    '@popperjs/core': '@popperjs/core',
-    'async-validator': 'async-validator',
     'mitt': 'mitt',
-    'normalize-wheel': 'normalize-wheel',
-    'resize-observer-polyfill': 'resize-observer-polyfill',
   },
-  /^dayjs.*/,
   /^lodash.*/)
 }
 

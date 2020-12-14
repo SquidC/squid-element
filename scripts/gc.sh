@@ -45,8 +45,6 @@ export default defineComponent({
   },
 })
 </script>
-<style scoped>
-</style>
 EOF
 
 cat <<EOF >"$DIRNAME/index.ts"
