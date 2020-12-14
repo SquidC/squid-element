@@ -1,0 +1,11 @@
+{
+    "name": "squid-element",
+    "version": "0.0.1",
+    "description": "squid-element default export",
+    "license": "ISC",
+    "main": "dist/index.js",
+    "dependencies": {
+      "@squid-element/icon": "^0.0.0"
+    }
+  }
+  
