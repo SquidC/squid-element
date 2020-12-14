@@ -1,26 +1,28 @@
 "use strict"
 /* eslint-disable @typescript-eslint/no-var-requires */
 const { series, src, dest } = require("gulp")
-const sass = require("gulp-dart-sass")
+const less = require("gulp-less")
 const autoprefixer = require("gulp-autoprefixer")
 const cssmin = require("gulp-cssmin")
 const rename = require("gulp-rename")
 
-const noElPrefixFile = /(index|base|display)/
+const noSCPrefixFile = /(index|base|display)/
 
+// 打包less
 function compile() {
-  return src("./src/*.scss")
-    .pipe(sass.sync())
+  return src("./src/*.less")
+    .pipe(less())
     .pipe(autoprefixer({ cascade: false }))
     .pipe(cssmin())
     .pipe(rename(function (path) {
-      if(!noElPrefixFile.test(path.basename)) {
-        path.basename = `el-${path.basename}`
+      if(!noSCPrefixFile.test(path.basename)) {
+        path.basename = `sc-${path.basename}`
       }
     }))
     .pipe(dest("./lib"))
 }
 
+// 复制字体
 function copyfont() {
   return src("./src/fonts/**")
     .pipe(cssmin())
