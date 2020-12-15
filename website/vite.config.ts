@@ -1,5 +1,6 @@
 import { UserConfig } from "vite"
-import { resolve,join } from "path"
+import { resolve, join } from "path"
+import mdLoader from "./md-loader"
 
 function pathResolve(dir: string) {
   return resolve(__dirname, ".", dir)
@@ -22,6 +23,13 @@ const viteConfig: UserConfig = {
       javascriptEnabled: true,
     },
   },
+  plugins: [
+    mdLoader({
+      prism: {
+        theme: "okaidia",
+      },
+    }),
+  ],
 }
 
 export default viteConfig

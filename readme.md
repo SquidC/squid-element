@@ -22,3 +22,13 @@ yarn build:utils          # 打包utils使用babel
 yarn build:theme          # 打包主题 使用gulp打包less样式
 ```
 
+## 因为md loader额外引入的包
+
+```json
+{
+  "prismjs": "^1.22.0",
+  "to-vfile": "^6.1.0",
+  "unified": "^9.2.0",
+  "unist-util-map": "^2.0.1",
+}
+```
