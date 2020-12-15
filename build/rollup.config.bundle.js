@@ -46,8 +46,9 @@ export default [
     ],
     // 判断包是否外部引入
     external(id) {
-      // [vue || 根目录的package.json 依赖] 使用外部引入
+      // [vue || element-plus || 根目录的package.json 依赖] 使用外部引入
       return /^vue/.test(id)
+        || /^element-plus/.test(id)
         || deps.some(k => new RegExp('^' + k).test(id))
     },
   },

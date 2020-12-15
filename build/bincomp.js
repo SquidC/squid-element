@@ -11,7 +11,7 @@ const pkgs = getPackagesSync()
   .map(pkg => pkg.name)
   .filter(name =>
     name.includes('@squid-element') &&
-    // 不打包
+    // 不用rollup打包
     !name.includes('utils'),
   )
 const STEP = 4

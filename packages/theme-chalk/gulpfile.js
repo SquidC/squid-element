@@ -6,6 +6,7 @@ const autoprefixer = require("gulp-autoprefixer")
 const cssmin = require("gulp-cssmin")
 const rename = require("gulp-rename")
 
+// import "element-plus/lib/theme-chalk/index.css"
 const noSCPrefixFile = /(index|base|display)/
 
 // 打包less

@@ -19,6 +19,7 @@ const runBuild = async () => {
     .map(pkg => pkg.name)
     .filter(name =>
       name.includes('@squid-element') &&
+      // 不用rollup打包
       !name.includes('utils'),
     ).slice(process.argv[2], process.argv[3])
 
@@ -65,6 +66,7 @@ const runBuild = async () => {
       ],
       external(id) {
         return /^vue/.test(id)
+          || /^element-plus/.test(id)
           || /^@squid-element/.test(id)
           || deps.some(k => new RegExp('^' + k).test(id))
       },
