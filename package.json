@@ -87,6 +87,7 @@
     "typescript": "^4.0.2",
     "unified": "^9.2.0",
     "unist-util-map": "^2.0.1",
+    "unist-util-visit": "^2.0.3",
     "url-loader": "^4.1.0",
     "vite": "^1.0.0-rc.13",
     "vue-jest": "5.0.0-alpha.5",
