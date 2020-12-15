@@ -19,6 +19,7 @@
     "upgrade:vue": "bash ./scripts/update-versions.sh",
     "lint": "eslint ./packages --ext .vue,.js,.ts",
     "lint-fix": "eslint --fix ./packages --ext .vue,.js,.ts",
+    "website-dev": "cd website && vite",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "husky": {
