@@ -1,7 +1,8 @@
 // ✨配置生成路由
 
 /**
- * 加载md文件路由
+ * 加载md文件
+ * 作为component文档路由
  */
 function loadDocs(){
   return []
@@ -23,15 +24,15 @@ const componentsDocs = [
 /**
  * 主框架路由
 */
-const RootLayout = [{
-  path: "/",
-  name: "Root",
-  component: () => import("/@/layout/basic/index.vue"),
-  meta: {
-    title: "Root",
+export default [
+  {
+    path: "/",
+    name: "Root",
+    component: () => import("/@/layout/basic/index.vue"),
+    meta: {
+      title: "Root",
+    },
+    children: componentsDocs,
   },
-  children: componentsDocs,
-}]
-
-export default [RootLayout]
+]
 

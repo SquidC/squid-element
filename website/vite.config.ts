@@ -9,14 +9,14 @@ const viteConfig: UserConfig = {
   // alias a path to a fs directory
   // 路径别名必须以斜杠开头斜杠结尾
   alias: {
-    "/@/": pathResolve("src"),
+    "/@/": pathResolve("."),
   },
   cssPreprocessOptions: {
     less: {
       modifyVars: {
         hack: `true; @import "${join(
           __dirname,
-          "./src/styles/variables.less",
+          "./styles/index.less",
         )}";`,
       },
       javascriptEnabled: true,
