@@ -1,7 +1,7 @@
 import { UserConfig } from "vite"
 import { resolve, join } from "path"
 import mdLoader from "./md-loader"
-import vueMd from "./plugin/vue-markdown"
+// import vueMd from "./plugin/vue-markdown"
 function pathResolve(dir: string) {
   return resolve(__dirname, ".", dir)
 }
@@ -29,7 +29,7 @@ const viteConfig: UserConfig = {
         theme: "okaidia",
       },
     }),
-    vueMd(),
+    // vueMd(),
   ],
 }
 

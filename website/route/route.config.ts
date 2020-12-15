@@ -5,7 +5,14 @@
  * 作为component文档路由
  */
 function loadDocs(){
-  return []
+  return [
+    {
+      path: "/link",
+      name: "link",
+      component: () => import("/@/docs/link.md"),
+      children: [],
+    },
+  ]
 }
 
 /**

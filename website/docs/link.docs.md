@@ -1,21 +1,16 @@
 ---
-title: Link 文字链接
-dics: Link 文字链接
+title: sdfsa
+dics: asdfs
 wrapperClass: test-wrap
 ---
 
 ### vue preview
 
-
 ```vue demo
 <template>
   <div>
-    <el-link href="https://element.eleme.io" target="_blank">默认链接</el-link>
-    <el-link type="primary">主要链接</el-link>
-    <el-link type="success">成功链接</el-link>
-    <el-link type="warning">警告链接</el-link>
-    <el-link type="danger">危险链接</el-link>
-    <el-link type="info">信息链接</el-link>
+    <el-button>button test</el-button>
+    <el-button type="primary">primary button</el-button>
   </div>
 </template>
 ```
@@ -67,3 +62,34 @@ Main.install = (app: App): void => {
 
 export default Main
 ```
+
+### Icon `Button`
+
+description
+
+> demo need vue code wrapped
+
+```vue demo
+<template>
+  <div>num: {{ num }}</div>
+  <div>
+    <el-button type="primary" icon="el-icon-edit" @click="testclick">add</el-button>
+  </div>
+</template>
+<script>
+export default {
+  data() {
+    return {
+      num: 0
+    }
+  },
+  methods: {
+    testclick() {
+      this.num++
+    }
+  }
+}
+</script>
+```
+
+### Attributes
