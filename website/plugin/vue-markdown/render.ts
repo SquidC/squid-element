@@ -8,9 +8,7 @@ import MarkdownIt from "markdown-it"
 export const RENDER_FILE = /(.*?\.md)_(vdpv_\d+)/
 
 // md 实例
-const md =  new MarkdownIt({
-
-})
+const md =  new MarkdownIt({})
 
 export function renderMD(fileContent: string) {
 
