@@ -1,6 +1,5 @@
 {
   "name": "squid-element",
-  "private": true,
   "version": "0.0.1",
   "description": "A Component Library for Vue3.0",
   "scripts": {
@@ -19,7 +18,7 @@
     "upgrade:vue": "bash ./scripts/update-versions.sh",
     "lint": "eslint ./packages --ext .vue,.js,.ts",
     "lint-fix": "eslint --fix ./packages --ext .vue,.js,.ts",
-    "website-dev": "cd website && vite",
+    "dev": "cd website && vite",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "husky": {
@@ -32,7 +31,9 @@
     "*.{js,ts,vue}": "eslint  --fix --ext .ts"
   },
   "dependencies": {
+    "@types/markdown-it": "^10.0.3",
     "lodash": "^4.17.20",
+    "markdown-it": "^12.0.3",
     "mitt": "^2.1.0",
     "vue": "3.0.3"
   },
@@ -49,6 +50,8 @@
     "@babel/preset-env": "^7.11.5",
     "@babel/preset-typescript": "^7.10.4",
     "@rollup/plugin-node-resolve": "^11.0.0",
+    "@types/debug": "^4.1.5",
+    "@types/fs-extra": "^9.0.5",
     "@types/jest": "^26.0.19",
     "@types/lodash": "^4.14.161",
     "@typescript-eslint/eslint-plugin": "^3.10.1",

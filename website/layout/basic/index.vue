@@ -14,7 +14,7 @@ import { defineComponent } from "vue"
 export default defineComponent({
   name: "BasicLayout",
   setup() {
-    console.log("aaa")
+    console.log("aas")
 
     return {
 

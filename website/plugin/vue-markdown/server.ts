@@ -1,7 +1,7 @@
-
+import fs from "fs-extra"
 import { ServerPlugin } from "vite"
-import { RENDER_FILE } from "./render"
-
+import chalk from "chalk"
+import { RENDER_FILE, renderMD } from "./render"
 
 export function createServerPlugin(): ServerPlugin{
   console.log("执行server plugin")
@@ -13,8 +13,15 @@ export function createServerPlugin(): ServerPlugin{
 
     // hmr vite使用websocket实现热更新
     watcher.on("change", async file => {
+      console.log("监听到文件变动:",file)
       if (file.endsWith(".md")) {
+        console.log(chalk.green(`[vite-markdown] `) + `reloading: ${file}`)
+        const rPath = resolver.fileToRequest(file)
+        const aPath = resolver.requestToFile(rPath)
 
+        // 读取变更文件
+        const fileContent = fs.readFileSync(aPath).toString()
+        renderMD(fileContent)
       }
     })
 
