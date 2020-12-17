@@ -1,10 +1,10 @@
-import { mount } from '@vue/test-utils'
-import Link from '../src/index.vue'
+import { mount } from "@vue/test-utils"
+import Link from "../src/index.vue"
 
-const AXIOM = 'Rem is the best girl'
+const AXIOM = "Rem is the best girl"
 
-describe('Link.vue', () => {
-  test('render test', () => {
+describe("Link.vue", () => {
+  test("render test", () => {
     const wrapper = mount(Link, {
       slots: {
         default: AXIOM,
@@ -13,18 +13,18 @@ describe('Link.vue', () => {
     expect(wrapper.text()).toEqual(AXIOM)
   })
 
-  test('it should handle click event when link is not disabled', async () => {
+  test("it should handle click event when link is not disabled", async () => {
     const wrapper = mount(Link, {
       slots: {
         default: AXIOM,
       },
     })
 
-    await wrapper.find('.el-link').trigger('click')
-    expect(wrapper.emitted('click')).toHaveLength(1)
+    await wrapper.find(".el-link").trigger("click")
+    expect(wrapper.emitted("click")).toHaveLength(1)
   })
 
-  test('it should disable click when link is disabled', async () => {
+  test("it should disable click when link is disabled", async () => {
     const wrapper = mount(Link, {
       slots: {
         default: AXIOM,
@@ -34,13 +34,13 @@ describe('Link.vue', () => {
       },
     })
 
-    await wrapper.find('.el-link').trigger('click')
-    expect(wrapper.emitted('click')).toBeUndefined()
+    await wrapper.find(".el-link").trigger("click")
+    expect(wrapper.emitted("click")).toBeUndefined()
   })
 
 
-  test('icon slots', () => {
-    const linkName = 'test link'
+  test("icon slots", () => {
+    const linkName = "test link"
     const wrapper = mount(Link, {
       slots: {
         default: linkName,

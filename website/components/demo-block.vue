@@ -1,6 +1,6 @@
 <template>
-   <div class="demo-block">
-     <div class="source">
+  <div class="demo-block">
+    <div class="source">
       <slot name="source"></slot>
     </div>
     <div ref="meta" class="meta">
@@ -11,13 +11,13 @@
         <slot name="highlight"></slot>
       </div>
     </div>
-   </div>
+  </div>
 </template>
 
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent } from "vue"
 export default defineComponent({
-    name:"DemoBlock",
-});
+  name:"DemoBlock",
+})
 </script>

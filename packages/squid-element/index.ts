@@ -1,4 +1,4 @@
-import type { App } from 'vue'
+import type { App } from "vue"
 import { version as version_ } from "./version"
 import SCIcon from "@squid-element/icon"
 import Test1 from "@squid-element/test1"
