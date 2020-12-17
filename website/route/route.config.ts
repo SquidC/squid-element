@@ -21,10 +21,10 @@ function loadDocs(){
 const componentsDocs = [
   // 组件文档
   {
-    path: "/component",
+    path: "/abc",
     name: "component",
-    component: () => import("/@/views/components.vue"),
-    children: loadDocs(),
+    component: () => import("/@/docs/link.md"),
+
   },
 ]
 
