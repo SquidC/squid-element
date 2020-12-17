@@ -1,6 +1,6 @@
 import { UserConfig } from "vite"
 import { resolve, join } from "path"
-import vueMd from "./plugin/vue-markdown"
+import vueMd from "@squidc/vite-md"
 // import viteMd from "./plugin/vite-markdown"
 
 function pathResolve(dir: string) {
