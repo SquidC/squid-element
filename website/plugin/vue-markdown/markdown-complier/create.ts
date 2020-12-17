@@ -5,10 +5,10 @@ import { addFenceRule } from "./fence"
 const md =  new MarkdownIt({})
 // 使用md插件,让md支持 :::demo 这样的语法
 md.use(MarkdownItContainer, "demo", {
-  validate(params) {
+  validate(params: string) {
     return params.trim().match(/^demo\s*(.*)$/)
   },
-  render(tokens, idx) {
+  render(tokens: any, idx: number) {
     const m = tokens[idx].info.trim().match(/^demo\s*(.*)$/)
     if (tokens[idx].nesting === 1) {
       const description = m && m.length > 1 ? m[1] : ""

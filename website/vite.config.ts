@@ -34,8 +34,8 @@ const viteConfig: UserConfig = {
     // viteMd(),
   ],
   optimizeDeps: {
-    include: ["lodash", "element-plus"]
-  }
+    include: ["lodash", "element-plus"],
+  },
 }
 
 export default viteConfig

@@ -21,10 +21,9 @@ function loadDocs(){
 const componentsDocs = [
   // 组件文档
   {
-    path: "/abc",
+    path: "/component",
     name: "component",
-    component: () => import("/@/docs/link.md"),
-
+    component: loadDocs,
   },
 ]
 
