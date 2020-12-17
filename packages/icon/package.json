@@ -1,7 +1,7 @@
 {
   "name": "@squid-element/icon",
   "version": "0.0.0",
-  "main": "dist/index.js",
+  "main": "index.ts",
   "license": "MIT",
   "peerDependencies": {
     "element-plus": "^1.0.1-beta.7",
