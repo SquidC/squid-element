@@ -1963,10 +1963,10 @@
     estree-walker "^1.0.1"
     picomatch "^2.2.2"
 
-"@squidc/vite-md@^0.5.7":
-  version "0.5.7"
-  resolved "https://registry.npm.taobao.org/@squidc/vite-md/download/@squidc/vite-md-0.5.7.tgz#b1431c459db6b9f51d3a3d50df959278e47f39b1"
-  integrity sha1-sUMcRZ22ufUdOj1Q35WSeOR/ObE=
+"@squidc/vite-md@0.5.10":
+  version "0.5.10"
+  resolved "https://registry.npmjs.org/@squidc/vite-md/-/vite-md-0.5.10.tgz#6c09aa57a75e5a50503367a3f1d76abcbd748a01"
+  integrity sha512-+KAB3hF9Er8EE83az6mlNoT++uPzHcKe0lZWuIDbl3nmi9ifAR6wlxup3TDQqqOUIjLu1Jf2pyvPzXw87uhBqQ==
   dependencies:
     "@types/fs-extra" "^9.0.5"
     "@types/markdown-it" "^12.0.0"

@@ -1,6 +1,6 @@
 {
  "compilerOptions": {
-   "module": "ESNext",
+   "module": "esnext",
    "declaration": true,
    "noImplicitAny": false,
    "removeComments": true,
