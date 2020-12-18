@@ -6,7 +6,6 @@
     "main": "index.ts",
     "dependencies": {
       "@squid-element/icon": "^0.0.0",
-      "@squid-element/test1": "^0.0.0",
-      "@squid-element/link": "^0.0.0"
+      "@squid-element/test1": "^0.0.0"
     }
   }

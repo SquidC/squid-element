@@ -26,8 +26,9 @@ const viteConfig: UserConfig = {
   plugins: [
     vueMd(),
   ],
+  // 设置深依赖
   optimizeDeps: {
-    include: ["lodash", "element-plus"],
+    include: ["element-plus"],
   },
 }
 

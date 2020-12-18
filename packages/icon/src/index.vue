@@ -1,5 +1,6 @@
 <template>
-  <div>
+  <div class="icon-test">
+    icon components
     <slot></slot>
   </div>
 </template>

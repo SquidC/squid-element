@@ -1,5 +1,6 @@
 <template>
   <div class="test1">
+    <h1>test1</h1>
     <ElButton type="primary">aaa</ElButton>
     <slot></slot>
   </div>
@@ -14,9 +15,12 @@ export default defineComponent({
     ElButton,
   },
   props: { },
-  setup(props) {
+  setup() {
     // init here
-    console.log(props)
+    console.log("load test1")
+    return {
+
+    }
   },
 })
 </script>
