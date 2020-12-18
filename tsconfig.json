@@ -12,6 +12,7 @@
    "lib": [
      "ESNext", "DOM"
    ],
+   "jsx": "preserve",
    "allowSyntheticDefaultImports": true
  },
  "exclude": [
