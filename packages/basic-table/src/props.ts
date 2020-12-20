@@ -1,5 +1,5 @@
 import { PropType } from "vue"
-import { Tool } from "@squid-element/Operation"
+import { Tool } from "@squid-element/operation"
 import { TableColumn } from "./types"
 export const props = {
   /**

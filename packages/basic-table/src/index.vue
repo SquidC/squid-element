@@ -43,7 +43,7 @@
 import { defineComponent, toRefs } from "vue"
 import { props as componentProps } from "./props"
 import { ElTable, ElTableColumn } from "element-plus"
-import Operation, { Tool } from "@squid-element/Operation"
+import Operation, { Tool } from "@squid-element/operation"
 import TableColumn from "./TableColumn"
 export default defineComponent({
   name: "BasicTable",

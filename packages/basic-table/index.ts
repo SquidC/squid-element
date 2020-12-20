@@ -1,5 +1,5 @@
 import { App } from "vue"
-import  BasicTable from "./src/index.vue"
+import BasicTable from "./src/index.vue"
 
 
 

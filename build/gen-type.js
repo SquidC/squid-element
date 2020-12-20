@@ -4,12 +4,11 @@ const path = require('path')
 const { noSCPrefixFile } = require('./common')
 
 const outsideImport = /import .* from '..\/(.*?)\/src\/.*/
-
 // global.d.ts
 fs.copyFileSync(
   path.resolve(__dirname, '../typings/vue-shim.d.ts'),
-  path.resolve(__dirname, '../typings/tsx-shim.d.ts'),
-  path.resolve(__dirname, '../typings/md-shim.d.ts'),
+  // path.resolve(__dirname, '../typings/tsx-shim.d.ts'),
+  // path.resolve(__dirname, '../typings/md-shim.d.ts'),
   path.resolve(__dirname, '../lib/squid-element.d.ts'),
 )
 // index.d.ts 将全部组件的声明丢出去
@@ -20,7 +19,7 @@ const index = fs.readFileSync(newIndexPath)
 const newIndex = index.toString().replace(/@squid-element\//g, './sc-').replace('sc-utils', 'utils')
 fs.writeFileSync(newIndexPath, newIndex)
 
-// 删除 squid-element 全部组件导出声明
+// // 删除 squid-element 全部组件导出声明
 fs.rmdirSync(path.resolve(__dirname, '../lib/squid-element'), { recursive: true })
 
 // 删除 test-utils 测试单元
