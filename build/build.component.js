@@ -7,6 +7,7 @@ const css = require('rollup-plugin-css-only')
 const { nodeResolve } = require('@rollup/plugin-node-resolve')
 const vue = require('rollup-plugin-vue')
 const rollup = require('rollup')
+const babel = require('rollup-plugin-babel')
 const typescript = require('rollup-plugin-typescript2')
 const { noSCPrefixFile } = require('./common')
 
@@ -42,6 +43,13 @@ const runBuild = async () => {
       plugins: [
         // 打包node
         nodeResolve(),
+
+        babel({
+          exclude: 'node_modules/**',
+          extensions: ['.tsx', '.jsx'],
+          runtimeHelpers: true
+        }),
+
         // 打包css
         css(),
         // 打包vue 不能使用css
