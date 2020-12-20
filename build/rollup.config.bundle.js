@@ -1,13 +1,13 @@
-// import vue from 'rollup-plugin-vue'
-import { nodeResolve } from '@rollup/plugin-node-resolve'
+import vue from 'rollup-plugin-vue'
+import nodeResolve from '@rollup/plugin-node-resolve'
+import babel from 'rollup-plugin-babel'
 import path from 'path'
-// import commonjs from '@rollup/plugin-commonjs'
+import commonjs from '@rollup/plugin-commonjs'
 import { terser } from 'rollup-plugin-terser'
 import typescript from 'rollup-plugin-typescript2'
 import pkg from '../package.json'
 const deps = Object.keys(pkg.dependencies)
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const vue = require('rollup-plugin-vue')
+
 // 打包.d.ts
 export default [
   {
@@ -21,7 +21,14 @@ export default [
       terser(),
       // 合并外部模块代码
       nodeResolve(),
-      // commonjs(),
+      babel({
+        exclude: 'node_modules/**',
+        extensions: ['.tsx', '.jsx'],
+        runtimeHelpers: true
+      }),
+      // commonjs({
+
+      // }),
       // 打包vue
       vue({
         target: 'browser',

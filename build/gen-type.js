@@ -8,6 +8,8 @@ const outsideImport = /import .* from '..\/(.*?)\/src\/.*/
 // global.d.ts
 fs.copyFileSync(
   path.resolve(__dirname, '../typings/vue-shim.d.ts'),
+  path.resolve(__dirname, '../typings/tsx-shim.d.ts'),
+  path.resolve(__dirname, '../typings/md-shim.d.ts'),
   path.resolve(__dirname, '../lib/squid-element.d.ts'),
 )
 // index.d.ts 将全部组件的声明丢出去
