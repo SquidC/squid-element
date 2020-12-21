@@ -10,7 +10,7 @@ const viteConfig: UserConfig = {
   // alias a path to a fs directory
   // 路径别名必须以斜杠开头斜杠结尾
   alias: {
-    "/@/": pathResolve("."),
+    "/@/": pathResolve("./website/"),
   },
   cssPreprocessOptions: {
     less: {
