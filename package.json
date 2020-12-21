@@ -29,7 +29,7 @@
     }
   },
   "lint-staged": {
-    "*.{js,ts,vue}": "eslint  --fix --ext .ts"
+    "*.{js,ts,vue}": "eslint  --fix --ext .ts, .tsx"
   },
   "dependencies": {
     "@ant-design/icons-vue": "^5.1.8",

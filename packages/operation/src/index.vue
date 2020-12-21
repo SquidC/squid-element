@@ -53,6 +53,7 @@ import { ElTooltip, ElPopover } from "element-plus"
 import Icon from "@squid-element/icon"
 import { Tool } from "./types"
 import { props as componentProps } from "./props"
+
 export default defineComponent({
   name: "Operation",
   components: { ElTooltip, ElPopover, Icon },

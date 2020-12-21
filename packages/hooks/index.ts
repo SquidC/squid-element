@@ -1,1 +1,1 @@
-export * from "./useRefTemplate"
+export * from "./src/useRefTemplate"
