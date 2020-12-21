@@ -1,10 +1,10 @@
 # squid-element
 
-组件库
+组件库 文档都使用 vue3 实现
 
+## 脚本
 
-## 打包
-
+> 打包
 
 ```shell
 # 运行
@@ -22,13 +22,18 @@ yarn build:utils          # 打包utils使用babel
 yarn build:theme          # 打包主题 使用gulp打包less样式
 ```
 
-## 因为md loader额外引入的包
+> 建立`npm link`依赖
 
-```json
-{
-  "prismjs": "^1.22.0",
-  "to-vfile": "^6.1.0",
-  "unified": "^9.2.0",
-  "unist-util-map": "^2.0.1",
-}
+使新建的组件可以被其他组件引用
+
+```shell
+yarn bootstrap
+```
+
+> 生成组件
+
+生成默认组件
+
+```shell
+yarn gen
 ```
