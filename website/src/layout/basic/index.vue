@@ -2,7 +2,7 @@
   <RouterView
     v-slot="{Component}"
   >
-    <header>测试layout</header>
+    <div class="test-wrap"> test-wrap </div>
     <h1>markdown</h1>
     <Link />
     <h1>component</h1>
@@ -26,8 +26,6 @@ export default defineComponent({
     BasicForm,
   },
   setup() {
-    console.log("aas")
-
     return {
 
     }

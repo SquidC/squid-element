@@ -3,8 +3,9 @@ import { resolve, join } from "path"
 import vueMd from "@squidc/vite-md"
 
 function pathResolve(dir: string) {
-  return resolve(__dirname, ".", dir)
+  return resolve(__dirname, dir)
 }
+console.log(`true;@import "${join(__dirname, "./src/styles/index.less")}";`)
 const viteConfig: UserConfig = {
   port: 3050,
   // alias a path to a fs directory
@@ -15,10 +16,9 @@ const viteConfig: UserConfig = {
   cssPreprocessOptions: {
     less: {
       modifyVars: {
-        hack: `true; @import "${join(
-          __dirname,
-          "./styles/index.less",
-        )}";`,
+        hack: `
+        true;@import "${join(__dirname, "./src/styles/index.less")}";
+        `,
       },
       javascriptEnabled: true,
     },
