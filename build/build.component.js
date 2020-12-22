@@ -21,7 +21,8 @@ const runBuild = async () => {
     .filter(name =>
       name.includes('@squid-element') &&
       // 不用rollup打包
-      !name.includes('utils'),
+      !name.includes('utils') &&
+      !name.includes('theme-chalk')
     ).slice(process.argv[2], process.argv[3])
 
   build(inputs[index])

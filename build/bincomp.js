@@ -12,7 +12,8 @@ const pkgs = getPackagesSync()
   .filter(name =>
     name.includes('@squid-element') &&
     // 不用rollup打包
-    !name.includes('utils'),
+    !name.includes('utils') &&
+    !name.includes('theme-chalk')
   )
 const STEP = 4
 const START = 0
