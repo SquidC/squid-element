@@ -1,21 +1,22 @@
 {
  "compilerOptions": {
-   "module": "ESNext",
+   "module": "esnext",
    "declaration": true,
    "noImplicitAny": false,
    "removeComments": true,
    "moduleResolution": "node",
    "esModuleInterop": true,
-   "jsx": "preserve",
    "noLib": false,
    "target": "es6",
    "sourceMap": true,
    "lib": [
      "ESNext", "DOM"
    ],
+   "jsx": "preserve",
    "allowSyntheticDefaultImports": true
  },
  "exclude": [
-   "node_modules"
+   "node_modules",
+   "lib"
  ]
 }
