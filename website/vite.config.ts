@@ -28,7 +28,7 @@ const viteConfig: UserConfig = {
   ],
   // 设置深依赖
   optimizeDeps: {
-    include: ["element-plus"],
+    include: ["element-plus","highlight.js"],
   },
 }
 
