@@ -2,12 +2,12 @@
   <RouterView
     v-slot="{Component}"
   >
-    <header>测试layout</header>
+    <div class="test-wrap"> test-wrap </div>
     <h1>markdown</h1>
     <Link />
     <h1>component</h1>
-    <SCIcon />
-    <Test1 />
+    <BasicForm
+     />
     <component
       :is="Component"
       class="main-wrap"
@@ -16,19 +16,16 @@
 </template>
 <script lang="ts">
 import { defineComponent } from "vue"
-import Link from "../../docs/link.md"
-import { SCIcon, Test1 } from "squid-element"
+import { BasicForm } from "squid-element"
+import Link from "/@/docs/link.md"
 
 export default defineComponent({
   name: "BasicLayout",
   components: {
     Link,
-    SCIcon,
-    Test1,
+    BasicForm,
   },
   setup() {
-    console.log("aas")
-
     return {
 
     }

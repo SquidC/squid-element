@@ -1,18 +1,25 @@
 import type { App } from "vue"
 import { version as version_ } from "./version"
-import SCIcon from "@squid-element/icon"
-import Test1 from "@squid-element/test1"
+
+import BasicForm from "@squid-element/basic-form"
+import BasicTable from "@squid-element/basic-table"
+import Icon from "@squid-element/icon"
+import Operation from "@squid-element/operation"
 
 const version = version_
 
 const components = [
-  SCIcon,
-  Test1,
+  BasicForm,
+  BasicTable,
+  Icon,
+  Operation,
 ]
 
 export {
-  SCIcon,
-  Test1,
+  BasicForm,
+  BasicTable,
+  Icon,
+  Operation,
 }
 
 

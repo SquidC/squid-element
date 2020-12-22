@@ -6,6 +6,8 @@
     "main": "index.ts",
     "dependencies": {
       "@squid-element/icon": "^0.0.0",
-      "@squid-element/test1": "^0.0.0"
+      "@squid-element/basic-form": "^0.0.0",
+      "@squid-element/basic-table": "^0.0.0",
+      "@squid-element/operation": "^0.0.0"
     }
   }
