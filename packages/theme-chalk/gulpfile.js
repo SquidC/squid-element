@@ -62,16 +62,13 @@ function concatCss(){
 
 // 复制字体
 function copyfont() {
-  return src("./src/fonts/**")
+  // 合并之后都是用同一个fonts
+  return src([
+    "./src/fonts/**",
+    "../../node_modules/element-plus/lib/theme-chalk/fonts/**"
+  ])
     .pipe(cssmin())
     .pipe(dest("./lib/fonts"))
-}
-
-// 复制element-plus字体
-function copyElementPlusFont() {
-  return src("../../node_modules/element-plus/lib/theme-chalk/fonts/**")
-    .pipe(cssmin())
-    .pipe(dest("./lib/element-plus-theme/fonts"))
 }
 
 exports.build = series(
@@ -79,5 +76,4 @@ exports.build = series(
   compileElementPlus,
   concatCss,
   copyfont,
-  copyElementPlusFont,
 )
