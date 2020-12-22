@@ -67,9 +67,17 @@ function copyfont() {
     .pipe(dest("./lib/fonts"))
 }
 
+// 复制element-plus字体
+function copyElementPlusFont() {
+  return src("../../node_modules/element-plus/lib/theme-chalk/fonts/**")
+    .pipe(cssmin())
+    .pipe(dest("./lib/element-plus-theme/fonts"))
+}
+
 exports.build = series(
   compileLess,
   compileElementPlus,
   concatCss,
   copyfont,
+  copyElementPlusFont,
 )
