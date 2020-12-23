@@ -7,4 +7,4 @@ export default [
     name: "测试 布局",
     path: "test",
   },
-]
+];

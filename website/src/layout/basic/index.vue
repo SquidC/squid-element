@@ -12,14 +12,14 @@
   </ElContainer>
 </template>
 <script lang="ts">
-import { defineComponent, toRefs, unref, watch, watchEffect, reactive } from "vue"
-import { useRouter } from "vue-router"
-import { ElHeader, ElAside, ElContainer } from "element-plus"
-import DocHeader from "./header.vue"
-import DocSider from "./sider.vue"
-import Doc from "./doc.vue"
-import componentMenu from "../component.menu"
-import layoutMenu from "../layout.menu"
+import { defineComponent, toRefs, unref, watch, watchEffect, reactive } from "vue";
+import { useRouter } from "vue-router";
+import { ElHeader, ElAside, ElContainer } from "element-plus";
+import DocHeader from "./header.vue";
+import DocSider from "./sider.vue";
+import Doc from "./doc.vue";
+import componentMenu from "../component.menu";
+import layoutMenu from "../layout.menu";
 
 export default defineComponent({
   name: "BasicLayout",
@@ -32,33 +32,33 @@ export default defineComponent({
     Doc,
   },
   setup() {
-    const { currentRoute } = useRouter()
+    const { currentRoute } = useRouter();
     const state = reactive({
       headerKey: "",
       siderKey: "",
       menu: [],
-    })
+    });
     watch(
       () => unref(currentRoute).path,
       path => {
-        const arr = path.split("/")
-        state.headerKey = "/" + arr[1]
-        state.siderKey = arr[2]
+        const arr = path.split("/");
+        state.headerKey = "/" + arr[1];
+        state.siderKey = arr[2];
       },
       {
         immediate: true,
       },
-    )
+    );
     watchEffect(() => {
       if (state.headerKey === "/components") {
-        state.menu = componentMenu
+        state.menu = componentMenu;
       }else {
-        state.menu = layoutMenu
+        state.menu = layoutMenu;
       }
-    })
-    return { ...toRefs(state) }
+    });
+    return { ...toRefs(state) };
   },
-})
+});
 </script>
 
 <style lang="less" scoped>

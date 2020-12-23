@@ -13,8 +13,8 @@
 
 
 <script lang="ts">
-import { defineComponent, PropType } from "vue"
-import { ElMenu, ElMenuItem } from "element-plus"
+import { defineComponent, PropType } from "vue";
+import { ElMenu, ElMenuItem } from "element-plus";
 
 export interface MenuItem {
   name: string
@@ -28,7 +28,7 @@ export default defineComponent({
     menu: {
       type: Array as PropType<MenuItem[]>,
       default: () => {
-        return []
+        return [];
       },
     },
     activeKey: {
@@ -36,9 +36,9 @@ export default defineComponent({
     },
   },
   setup(props) {
-    return { props }
+    return { props };
   },
-})
+});
 </script>
 
 <style lang="less" scoped>

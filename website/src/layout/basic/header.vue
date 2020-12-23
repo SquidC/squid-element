@@ -19,30 +19,30 @@
 
 
 <script lang="ts">
-import { defineComponent, ref, unref, watch } from "vue"
-import { ElMenu, ElMenuItem } from "element-plus"
-import { useRouter } from "vue-router"
+import { defineComponent, ref, unref, watch } from "vue";
+import { ElMenu, ElMenuItem } from "element-plus";
+import { useRouter } from "vue-router";
 export default defineComponent({
   name: "DocHeader",
   components: { ElMenu, ElMenuItem },
   setup() {
-    const { currentRoute, push } = useRouter()
-    const activeKey = ref("/components")
+    const { currentRoute, push } = useRouter();
+    const activeKey = ref("/components");
     watch(
       () => unref(currentRoute).path,
       path => {
-        const arr = path.split("/")
-        activeKey.value = "/" + arr[1]
+        const arr = path.split("/");
+        activeKey.value = "/" + arr[1];
       },{
         immediate: true,
       },
-    )
+    );
     function handleSelect(index) {
-      push(index)
+      push(index);
     }
-    return { handleSelect,activeKey }
+    return { handleSelect,activeKey };
   },
-})
+});
 </script>
 
 <style lang="less" scoped>

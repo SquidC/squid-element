@@ -7,4 +7,4 @@ export default [
     name: "Form 表单",
     path: "form",
   },
-]
+];

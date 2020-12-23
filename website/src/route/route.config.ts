@@ -11,7 +11,7 @@ function loadDocs() {
       name: "link",
       component: () => import("/@/docs/link.md"),
     },
-  ]
+  ];
 }
 
 /**
@@ -32,7 +32,7 @@ const layoutDocs = {
       component: () => import("/@/docs/crud.md"),
     },
   ],
-}
+};
 
 /**
  * 组件文档
@@ -46,7 +46,7 @@ const componentsDocs = {
     title: "组件文档",
   },
   children: loadDocs(),
-}
+};
 
 /**
  * 主框架路由
@@ -62,4 +62,4 @@ export default [
     },
     children: [componentsDocs, layoutDocs],
   },
-]
+];

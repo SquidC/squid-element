@@ -12,11 +12,11 @@
 
 
 <script lang="ts">
-import { defineComponent } from "vue"
+import { defineComponent } from "vue";
 import {
   ElMain,
   ElScrollbar,
-} from "element-plus"
+} from "element-plus";
 export default defineComponent({
   name: "Doc",
   components: {
@@ -24,9 +24,9 @@ export default defineComponent({
     ElScrollbar,
   },
   setup(props) {
-    return { props }
+    return { props };
   },
-})
+});
 </script>
 
 <style lang="less" scoped>
