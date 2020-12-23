@@ -4,41 +4,62 @@
  * 加载md文件
  * 作为component文档路由
  */
-function loadDocs(){
+function loadDocs() {
   return [
     {
-      path: "/link",
+      path: "link",
       name: "link",
       component: () => import("/@/docs/link.md"),
-      children: [],
     },
   ]
 }
 
 /**
-  * 文档
-*/
-const componentsDocs = [
-  // 组件文档
-  {
-    path: "/component",
-    name: "component",
-    component: loadDocs,
+ * 布局文档
+ */
+const layoutDocs = {
+  path: "/layout",
+  name: "layout",
+  component: () => import("/@/layout/basic/doc.vue"),
+  redirect: "/layout/crud",
+  meta: {
+    title: "布局文档",
   },
-]
+  children: [
+    {
+      path: "crud",
+      name: "crud",
+      component: () => import("/@/docs/crud.md"),
+    },
+  ],
+}
+
+/**
+ * 组件文档
+ */
+const componentsDocs = {
+  path: "/components",
+  name: "components",
+  component: () => import("/@/layout/basic/doc.vue"),
+  redirect: "/components/link",
+  meta: {
+    title: "组件文档",
+  },
+  children: loadDocs(),
+}
 
 /**
  * 主框架路由
-*/
+ */
 export default [
   {
     path: "/",
     name: "Root",
     component: () => import("/@/layout/basic/index.vue"),
+    redirect: "/components/link",
     meta: {
       title: "Root",
     },
-    children: componentsDocs,
+    children: [componentsDocs, layoutDocs],
   },
 ]
-
