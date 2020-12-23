@@ -17,10 +17,10 @@ import { createFromIconfontCN } from "@ant-design/icons-vue"
 const IconFont: any = createFromIconfontCN({
   // 在 iconfont.cn 上生成
   // TODO: cdn后续在取得项目配置中获取
-  scriptUrl: "//at.alicdn.com/t/font_1701693_7hz17j2w5i9.js",
+  scriptUrl: "//at.alicdn.com/t/font_1701693_9q17ffjqa8k.js",
 })
 export default defineComponent({
-  name: "SvgIcon",
+  name: "ScIcon",
   components: { IconFont },
   props: componentProps,
   emits: ["click"],
