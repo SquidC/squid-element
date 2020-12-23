@@ -1,25 +1,9 @@
 <template>
-  <ElTable
-    v-bind="props"
-    :data="dataSource"
-  >
-    <template
-      v-for="column in columns"
-      :key="column.field"
-    >
-      <ElTableColumn
-        v-bind="column"
-        :prop="column.field"
-      >
-        <template
-          v-if="column.render"
-          #default="scope"
-        >
-          <TableColumn
-            :col="scope.row[column.field]"
-            :row="scope.row"
-            :render="column.render"
-          />
+  <ElTable v-bind="props" :data="dataSource">
+    <template v-for="column in columns" :key="column.field">
+      <ElTableColumn v-bind="column" :prop="column.field">
+        <template v-if="column.render" #default="scope">
+          <TableColumn :col="scope.row[column.field]" :row="scope.row" :render="column.render" />
         </template>
       </ElTableColumn>
     </template>
