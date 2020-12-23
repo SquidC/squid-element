@@ -1,5 +1,5 @@
-import { PropType } from "vue"
-import { FormItem, Widget, Option } from "./types"
+import { PropType } from "vue";
+import { FormItem, Widget, Option } from "./types";
 
 /**
  * BasicForm 组件属性
@@ -49,7 +49,7 @@ export const props = {
     type: Boolean,
     default: false,
   },
-}
+};
 
 /**
  * 表单控件属性
@@ -72,4 +72,4 @@ export const FormWidgetProps = {
   render: {
     type: Function as PropType<(formItem: FormItem, value: any) => JSX.Element>,
   },
-}
+};

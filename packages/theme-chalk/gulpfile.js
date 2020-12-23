@@ -1,17 +1,17 @@
-"use strict"
+"use strict";
 /* eslint-disable @typescript-eslint/no-var-requires */
-const { series, src, dest } = require("gulp")
-const less = require("gulp-less")
-const autoprefixer = require("gulp-autoprefixer")
-const cssmin = require("gulp-cssmin")
-const rename = require("gulp-rename")
-const concat = require("gulp-concat") // 合并css
-const sass = require("gulp-sass") // 编译scss 为 css
+const { series, src, dest } = require("gulp");
+const less = require("gulp-less");
+const autoprefixer = require("gulp-autoprefixer");
+const cssmin = require("gulp-cssmin");
+const rename = require("gulp-rename");
+const concat = require("gulp-concat"); // 合并css
+const sass = require("gulp-sass"); // 编译scss 为 css
 
-const browserSync = require("browser-sync").create()
-const reload = browserSync.reload
+const browserSync = require("browser-sync").create();
+const reload = browserSync.reload;
 
-const noSCPrefixFile = /(index|base|display)/
+const noSCPrefixFile = /(index|base|display)/;
 // import "element-plus/lib/theme-chalk/index.css"
 
 // 打包element-plus 样式
@@ -20,7 +20,7 @@ function compileElementPlus() {
   return src("../../node_modules/element-plus/lib/theme-chalk/index.css")
     .pipe(sass()) // sass编译
     .pipe(dest("./lib/element-plus-theme"))
-    .pipe(reload({ stream: true }))
+    .pipe(reload({ stream: true }));
 }
 
 // 打包less
@@ -36,11 +36,11 @@ function compileLess() {
     // 改名
     .pipe(rename(function (path) {
       if(!noSCPrefixFile.test(path.basename)) {
-        path.basename = `sc-${path.basename}`
+        path.basename = `sc-${path.basename}`;
       }
     }))
     .pipe(dest("./lib"))
-    .pipe(reload({ stream: true }))
+    .pipe(reload({ stream: true }));
 }
 
 // 合并任务
@@ -56,7 +56,7 @@ function concatCss(){
     .pipe(autoprefixer({ cascade: false }))
     // 压缩css
     .pipe(cssmin())
-    .pipe(dest("./lib"))
+    .pipe(dest("./lib"));
 }
 
 
@@ -65,10 +65,10 @@ function copyfont() {
   // 合并之后都是用同一个fonts
   return src([
     "./src/fonts/**",
-    "../../node_modules/element-plus/lib/theme-chalk/fonts/**"
+    "../../node_modules/element-plus/lib/theme-chalk/fonts/**",
   ])
     .pipe(cssmin())
-    .pipe(dest("./lib/fonts"))
+    .pipe(dest("./lib/fonts"));
 }
 
 exports.build = series(
@@ -76,4 +76,4 @@ exports.build = series(
   compileElementPlus,
   concatCss,
   copyfont,
-)
+);

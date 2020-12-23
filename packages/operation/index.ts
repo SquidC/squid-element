@@ -1,10 +1,10 @@
-import { App } from "vue"
-import Operation from "./src/index.vue"
+import { App } from "vue";
+import Operation from "./src/index.vue";
 
 
 Operation.install = (app: App): void => {
-  app.component(Operation.name, Operation)
-}
+  app.component(Operation.name, Operation);
+};
 
-export default Operation
-export * from "./src/types"
+export default Operation;
+export * from "./src/types";

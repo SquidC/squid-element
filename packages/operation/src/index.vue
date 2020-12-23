@@ -48,11 +48,11 @@
 
 
 <script lang="ts">
-import { computed, CSSProperties, defineComponent, toRefs } from "vue"
-import { ElTooltip, ElPopover } from "element-plus"
-import Icon from "@squid-element/icon"
-import { Tool } from "./types"
-import { props as componentProps } from "./props"
+import { computed, CSSProperties, defineComponent, toRefs } from "vue";
+import { ElTooltip, ElPopover } from "element-plus";
+import Icon from "@squid-element/icon";
+import { Tool } from "./types";
+import { props as componentProps } from "./props";
 
 export default defineComponent({
   name: "Operation",
@@ -74,17 +74,17 @@ export default defineComponent({
       compose: "构成",
       prev: "上一页",
       next: "下一页",
-    }
+    };
     const wrapStyle = computed(() => {
       return {
         color: props.color,
         fontSize: props.size,
-      } as CSSProperties
-    })
+      } as CSSProperties;
+    });
     function handleClick(tool: Tool, row?: unknown) {
-      emit("tool-click", tool, row)
+      emit("tool-click", tool, row);
     }
-    return { ...toRefs(props), tooltips, wrapStyle, handleClick }
+    return { ...toRefs(props), tooltips, wrapStyle, handleClick };
   },
-})
+});
 </script>

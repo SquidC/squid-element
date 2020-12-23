@@ -24,11 +24,11 @@
 
 
 <script lang="ts">
-import { defineComponent, toRefs } from "vue"
-import { props as componentProps } from "./props"
-import { ElTable, ElTableColumn } from "element-plus"
-import Operation, { Tool } from "@squid-element/operation"
-import TableColumn from "./TableColumn"
+import { defineComponent, toRefs } from "vue";
+import { props as componentProps } from "./props";
+import { ElTable, ElTableColumn } from "element-plus";
+import Operation, { Tool } from "@squid-element/operation";
+import TableColumn from "./TableColumn";
 export default defineComponent({
   name: "BasicTable",
   components: { ElTable, ElTableColumn, TableColumn, Operation },
@@ -39,9 +39,9 @@ export default defineComponent({
          * 操作栏点击事件
          */
     function handleClick(tool: Tool,row: unknown) {
-      emit("tool-click",tool,row)
+      emit("tool-click",tool,row);
     }
-    return { props, ...toRefs(props), handleClick }
+    return { props, ...toRefs(props), handleClick };
   },
-})
+});
 </script>

@@ -1,4 +1,4 @@
-import { PropType } from "vue"
+import { PropType } from "vue";
 
 /**
  * icon组件属性
@@ -24,4 +24,4 @@ export const props = {
     type: [String, Number] as PropType<string | number>,
     default: 16,
   },
-}
+};

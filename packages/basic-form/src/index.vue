@@ -41,12 +41,12 @@
 
 
 <script lang="ts">
-import { defineComponent, ref, toRefs } from "vue"
-import { props as componentProps } from "./props"
-import { ElForm, ElFormItem, ElButton } from "element-plus"
-import FormWidget from "./FormWidget"
-import { Instance } from "./types"
-import { useRefTemplate } from "@squid-element/hooks"
+import { defineComponent, ref, toRefs } from "vue";
+import { props as componentProps } from "./props";
+import { ElForm, ElFormItem, ElButton } from "element-plus";
+import FormWidget from "./FormWidget";
+import { Instance } from "./types";
+import { useRefTemplate } from "@squid-element/hooks";
 
 export default defineComponent({
   name: "BasicForm",
@@ -56,26 +56,26 @@ export default defineComponent({
     /**
          * 内部表单ref
          */
-    const internalForm = ref<RefTemplate<Instance>>(null)
+    const internalForm = ref<RefTemplate<Instance>>(null);
     /**
          * 提交表单
          */
     function submitForm() {
-      const el = useRefTemplate<Instance>(internalForm)
+      const el = useRefTemplate<Instance>(internalForm);
       el.validate((isValid, invalidFields) => {
-        console.log("校验结果：", isValid)
-        console.log("校验错误字段:", invalidFields)
-        console.log("表单model:", props.model)
-      })
+        console.log("校验结果：", isValid);
+        console.log("校验错误字段:", invalidFields);
+        console.log("表单model:", props.model);
+      });
     }
     /**
          * 重置表单
          */
     function resetForm() {
-      const el = useRefTemplate<Instance>(internalForm)
-      el.resetFields()
+      const el = useRefTemplate<Instance>(internalForm);
+      el.resetFields();
     }
-    return { submitForm, resetForm, ...toRefs(props), props, internalForm }
+    return { submitForm, resetForm, ...toRefs(props), props, internalForm };
   },
-})
+});
 </script>

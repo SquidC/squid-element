@@ -1,6 +1,6 @@
-import { PropType } from "vue"
-import { Tool } from "@squid-element/operation"
-import { TableColumn } from "./types"
+import { PropType } from "vue";
+import { Tool } from "@squid-element/operation";
+import { TableColumn } from "./types";
 export const props = {
   /**
      * 表格数据源
@@ -8,7 +8,7 @@ export const props = {
   dataSource: {
     type: Array,
     default: () => {
-      return []
+      return [];
     },
   },
   /**
@@ -17,7 +17,7 @@ export const props = {
   columns: {
     type: Array as PropType<TableColumn[]>,
     default: () => {
-      return []
+      return [];
     },
   },
   /**
@@ -32,7 +32,7 @@ export const props = {
   tools: {
     type: Array as PropType<Tool[]>,
     default: () => {
-      return []
+      return [];
     },
   },
   /**
@@ -42,10 +42,10 @@ export const props = {
   extras: {
     type: Array as PropType<Tool[]>,
     default: () => {
-      return []
+      return [];
     },
   },
-}
+};
 
 export const TableColumnProps = {
   render: {
@@ -57,4 +57,4 @@ export const TableColumnProps = {
   row: {
     type: Object,
   },
-}
+};

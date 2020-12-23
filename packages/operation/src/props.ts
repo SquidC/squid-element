@@ -1,6 +1,6 @@
-import { Placement, TriggerType } from "element-plus/lib/el-popper/src/use-popper"
-import { PropType } from "vue"
-import { Tool } from "./types"
+import { Placement, TriggerType } from "element-plus/lib/el-popper/src/use-popper";
+import { PropType } from "vue";
+import { Tool } from "./types";
 export const props = {
   /**
      * 表格行数据
@@ -33,7 +33,7 @@ export const props = {
   tools: {
     type: Array as PropType<Tool[]>,
     default: () => {
-      return []
+      return [];
     },
   },
   /**
@@ -50,7 +50,7 @@ export const props = {
   extras: {
     type: Array as PropType<Tool[]>,
     default: () => {
-      return []
+      return [];
     },
   },
   /**
@@ -59,4 +59,4 @@ export const props = {
   content: {
     type: Object as PropType<JSX.Element>,
   },
-}
+};
