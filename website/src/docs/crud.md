@@ -1,12 +1,12 @@
-## Link 文字链接
+## Crud 普通增删查改布局
 
-文字超链接
+
 
 ### 基础用法
 
-直接通过设置类名为 `el-icon-iconName` 来使用即可。例如：
 
-:::demo 备注测试
+
+:::demo 只适用普通增删查改
 ```html
 <template>
   <div class="hello-wrap">
