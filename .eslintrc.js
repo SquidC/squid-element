@@ -27,14 +27,14 @@ module.exports = {
     "comma-dangle": ["error", "always-multiline"],
     quotes: ["error", "double", { avoidEscape: true, allowTemplateLiterals: true }],
     camelcase: ["error", { properties: "never" }],
-    semi: ["error", "never"],
+    semi: ["error", "always"],
     indent: ["error", 2, { SwitchCase: 1 }],
     "object-curly-spacing": ["error", "always"],
     "arrow-parens": ["error", "as-needed"],
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "@typescript-eslint/no-explicit-any": "off",
     "@typescript-eslint/member-delimiter-style": [
-      "error",
+      "off",
       {
         multiline: {
           delimiter: "none",
@@ -63,4 +63,4 @@ module.exports = {
     "vue/require-default-prop": "off",
     "vue/html-closing-bracket-spacing": "error",
   },
-}
+};
