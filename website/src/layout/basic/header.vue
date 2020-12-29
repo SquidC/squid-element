@@ -13,6 +13,7 @@
     >
       <ElMenuItem index="/layout">布局</ElMenuItem>
       <ElMenuItem index="/components">组件</ElMenuItem>
+      <ElMenuItem index="/test">测试组件</ElMenuItem>
     </ElMenu>
   </div>
 </template>

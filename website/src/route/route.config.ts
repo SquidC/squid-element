@@ -60,6 +60,14 @@ export default [
     meta: {
       title: "Root",
     },
-    children: [componentsDocs, layoutDocs],
+    children: [
+      componentsDocs,
+      layoutDocs,
+      {
+        path: "/test",
+        name: "test",
+        component: () => import("/@/views/test.vue"),
+      },
+    ],
   },
 ];
