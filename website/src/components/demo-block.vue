@@ -45,7 +45,7 @@ import {
   nextTick,
 } from "vue";
 import hljs, { Node } from "highlight.js";
-import useRefTemplate from "../hooks/useRefTemplate";
+import { useRefTemplate } from "@squid-element/hooks";
 export default defineComponent({
   name: "DemoBlock",
   setup() {
