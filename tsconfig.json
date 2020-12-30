@@ -7,7 +7,7 @@
    "moduleResolution": "node",
    "esModuleInterop": true,
    "noLib": false,
-   "target": "es6",
+   "target": "es2017",
    "sourceMap": true,
    "lib": [
      "ESNext", "DOM"
@@ -17,6 +17,7 @@
  },
  "exclude": [
    "node_modules",
-   "lib"
+   "lib",
+   "scripts"
  ]
 }

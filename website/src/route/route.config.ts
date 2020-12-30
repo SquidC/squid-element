@@ -1,18 +1,7 @@
 // ✨配置生成路由
+import layout from "./gen.layout";
+import component from "./gen.components";
 
-/**
- * 加载md文件
- * 作为component文档路由
- */
-function loadDocs() {
-  return [
-    {
-      path: "link",
-      name: "link",
-      component: () => import("/@/docs/link.md"),
-    },
-  ];
-}
 
 /**
  * 布局文档
@@ -25,13 +14,7 @@ const layoutDocs = {
   meta: {
     title: "布局文档",
   },
-  children: [
-    {
-      path: "crud",
-      name: "crud",
-      component: () => import("/@/docs/crud.md"),
-    },
-  ],
+  children: layout,
 };
 
 /**
@@ -45,13 +28,13 @@ const componentsDocs = {
   meta: {
     title: "组件文档",
   },
-  children: loadDocs(),
+  children: component,
 };
 
 /**
  * 主框架路由
  */
-export default [
+export default[
   {
     path: "/",
     name: "Root",
