@@ -43,7 +43,7 @@ fs.writeFile(path.resolve(__component, "package.json"),
   "license": "MIT",
   "peerDependencies": {
     "element-plus": "^1.0.1-beta.7",
-    "vue": "^3.0.3"
+    "vue": "^3.0.4"
   },
   "devDependencies": {
     "@vue/test-utils": "^2.0.0-beta.3"
@@ -68,7 +68,7 @@ export default defineComponent({
 })
 </script>`)
 
-// tests/name.spec.ts
+// tests/${name}.spec.ts
 fs.writeFileSync(path.resolve(__component_tests, `${name}.spec.ts`),
 `import { mount } from "@vue/test-utils"
 import ${name} from "../src/index.vue"

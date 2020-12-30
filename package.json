@@ -16,7 +16,7 @@
     "build:esm": "node ./build/bincomp.js",
     "build:utils": "cross-env BABEL_ENV=utils babel packages/utils --extensions .ts --out-dir lib/utils",
     "build:theme": "rimraf packages/theme-chalk/lib && gulp build --gulpfile packages/theme-chalk/gulpfile.js && cp-cli packages/theme-chalk/lib lib/theme-chalk && rimraf packages/theme-chalk/lib",
-    "upgrade:vue": "bash ./scripts/update-versions.sh",
+    "upgrade:vue": "node ./scripts/update-version.js",
     "lint": "eslint ./packages --ext .vue,.js,.ts",
     "lint-fix": "eslint --fix ./packages --ext .vue,.js,.ts",
     "dev": "cd website && vite",
