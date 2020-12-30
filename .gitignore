@@ -8,9 +8,9 @@ yarn-error.log
 lerna-debug.json
 lerna-debug.log
 yarn-error.log
-storybook-static
 coverage/
 website-dist
 lib
 website/play/index.vue
 packages/squid-element/version.ts
+es

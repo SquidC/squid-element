@@ -1,5 +1,3 @@
-console.log("babel.config.js")
-
 module.exports = {
   // ATTENTION!!
   // Preset ordering is reversed, so `@babel/typescript` will called first
@@ -57,4 +55,4 @@ module.exports = {
       ],
     },
   },
-}
+};
