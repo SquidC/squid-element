@@ -10,11 +10,21 @@
       <slot name="source"></slot>
     </div>
     <!-- 源码区 -->
-    <div ref="meta" class="meta">
-      <div v-if="$slots.default" ref="description" class="description">
+    <div
+      ref="meta"
+      class="meta"
+    >
+      <div
+        v-if="$slots.default"
+        ref="description"
+        class="description"
+      >
         <slot></slot>
       </div>
-      <div ref="highlight" class="highlight">
+      <div
+        ref="highlight"
+        class="highlight"
+      >
         <slot name="highlight"></slot>
       </div>
     </div>
@@ -44,7 +54,7 @@ import {
   onMounted,
   nextTick,
 } from "vue";
-import hljs, { Node } from "highlight.js";
+import hljs from "highlight.js";
 import { useRefTemplate } from "@squid-element/hooks";
 export default defineComponent({
   name: "DemoBlock",
@@ -86,8 +96,8 @@ export default defineComponent({
       nextTick(() => {
         try {
           const hlEl = useRefTemplate<HTMLElement>(highlight) as HTMLElement;
-          const code = hlEl.querySelector("code");
-          hljs.highlightBlock(code as Node);
+          const code = hlEl.querySelector("code") as HTMLElement;
+          hljs.highlightBlock(code);
         } catch (error) {
           console.log(error);
         }

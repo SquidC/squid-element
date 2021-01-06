@@ -7,9 +7,9 @@
 ```typescript
 {
   alias: {
-    "/@/": pathResolve("."),
+    "@/": pathResolve("."),
   },
 }
 ```
 
-这样会直接拦截所有/的路径 导致`/vite/jsx`被`rewrite`成`/@/vite/jsx`
+这样会直接拦截所有/的路径 导致`/vite/jsx`被`rewrite`成`@/vite/jsx`

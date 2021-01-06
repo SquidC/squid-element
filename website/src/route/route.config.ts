@@ -9,7 +9,7 @@ import component from "./gen.components";
 const layoutDocs = {
   path: "/layout",
   name: "layout",
-  component: () => import("/@/layout/basic/doc.vue"),
+  component: () => import("@/layout/basic/doc.vue"),
   redirect: "/layout/crud",
   meta: {
     title: "布局文档",
@@ -23,7 +23,7 @@ const layoutDocs = {
 const componentsDocs = {
   path: "/components",
   name: "components",
-  component: () => import("/@/layout/basic/doc.vue"),
+  component: () => import("@/layout/basic/doc.vue"),
   redirect: "/components/link",
   meta: {
     title: "组件文档",
@@ -38,7 +38,7 @@ export default[
   {
     path: "/",
     name: "Root",
-    component: () => import("/@/layout/basic/index.vue"),
+    component: () => import("@/layout/basic/index.vue"),
     redirect: "/components/link",
     meta: {
       title: "Root",
@@ -49,7 +49,7 @@ export default[
       {
         path: "/test",
         name: "test",
-        component: () => import("/@/views/test.vue"),
+        component: () => import("@/views/test.vue"),
       },
     ],
   },

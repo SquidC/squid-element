@@ -13,7 +13,7 @@ fs.readdirSync(__dir).forEach(docsPath => {
   const routes = docs.map(doc => {
     const name = doc.replace(".md", "")
     const componentsPath = path.resolve(docsFullPath, doc)
-      .replace(__websiteSrc, "/@/")
+      .replace(__websiteSrc, "@/")
       .replace(/\\/g, "/")
       return {
         path: `${name}`,

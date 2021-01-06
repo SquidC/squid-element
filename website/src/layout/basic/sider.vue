@@ -5,7 +5,7 @@
     :default-active="activeKey"
     router
   >
-    <template v-for="menuItem in props.menu" :key="menuItem.path">
+    <template v-for="menuItem in props.menu" v-key="menuItem.path">
       <ElMenuItem :index="menuItem.path">{{ menuItem.name }}</ElMenuItem>
     </template>
   </ElMenu>

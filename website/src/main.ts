@@ -13,7 +13,9 @@ import "@squid-element/theme-chalk/src/index.less";
 import "element-plus/lib/theme-chalk/index.css";
 
 // 引入 highlight库样式
-import "highlight.js/styles/vs2015.css";
+import "highlight.js/styles/atom-one-light.css";
+// import "highlight.js/styles/color-brewer.css";
+
 
 const app = createApp(App);
 

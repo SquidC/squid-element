@@ -4,10 +4,10 @@
       <DocHeader />
     </ElHeader>
     <ElContainer class="page-container">
-      <ElAside width="240px">
+      <ElAside width="200px">
         <DocSider :menu="menu" :active-key="siderKey" />
       </ElAside>
-      <Doc />
+      <Doc class="doc-contanier" />
     </ElContainer>
   </ElContainer>
 </template>
@@ -63,7 +63,8 @@ export default defineComponent({
 
 <style lang="less" scoped>
 .doc-layout-wrap {
-  width: 100%;
+  margin: 0 auto;
+  max-width: 1200px;
   height: 100%;
   .layout-header-wrap {
     box-sizing: border-box;
@@ -75,6 +76,12 @@ export default defineComponent({
     .component-scroll {
       height: 100%;
     }
+
+    .doc-contanier {
+      height: 100%;
+      margin: 30px auto;
+    }
   }
 }
+
 </style>

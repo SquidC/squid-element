@@ -41,7 +41,6 @@ export default defineComponent({
   }
 
   .content {
-    padding-top: 50px;
     :deep(h3){
         margin: 55px 0 20px;
     }
