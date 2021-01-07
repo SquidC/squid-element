@@ -13,7 +13,7 @@ const draggable: ObjectDirective = {
       // const disy = e.pageY - el.offsetTop - offerY;
       const disx = e.pageX - el.offsetLeft;
       const disy = e.pageY - el.offsetTop;
-      console.log("dis", disx, disy);
+      // console.log("dis", disx, disy);
       document.onmousemove = function (e) {
         let x = e.pageX - disx;
         let y = e.pageY - disy;

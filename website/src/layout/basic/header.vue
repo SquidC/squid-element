@@ -53,6 +53,7 @@ export default defineComponent({
   display: flex;
   justify-content: space-between;
   overflow: hidden;
+  user-select: none;
   box-sizing: border-box;
   .logo {
     width: 180px;

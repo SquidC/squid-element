@@ -5,7 +5,11 @@
     </ElHeader>
     <ElContainer class="page-container">
       <ElAside width="200px">
-        <DocSider :menu="menu" :active-key="siderKey" />
+        <DocSider
+          class="component-scroll"
+          :menu-list="menu"
+          :elconfig="{}"
+        />
       </ElAside>
       <Doc class="doc-contanier" />
     </ElContainer>
@@ -16,10 +20,11 @@ import { defineComponent, toRefs, unref, watch, watchEffect, reactive } from "vu
 import { useRouter } from "vue-router";
 import { ElHeader, ElAside, ElContainer } from "element-plus";
 import DocHeader from "./header.vue";
-import DocSider from "./sider.vue";
+import DocSider from "./menu/index.vue";
 import Doc from "./doc.vue";
-import componentMenu from "../component.menu";
-import layoutMenu from "../layout.menu";
+// 加载路由表
+import componentMenu from "../gen.components";
+import layoutMenu from "../gen.layout";
 
 export default defineComponent({
   name: "BasicLayout",

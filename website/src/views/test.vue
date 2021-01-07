@@ -7,11 +7,7 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import ScIcon from "@squid-element/icon";
-import { Draggable } from "@squid-element/directives";
 export default defineComponent({
-  directives: {
-    Draggable,
-  },
   components: {
     ScIcon,
   },

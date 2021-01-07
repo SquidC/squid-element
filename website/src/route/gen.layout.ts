@@ -1,11 +1,11 @@
 export default [
   {
-    path: "crud",
+    path: "/layout/crud",
     name: "crud",
     component: () => import("@/docs/layout/crud.md")
   },
   {
-    path: "test",
+    path: "/layout/test",
     name: "test",
     component: () => import("@/docs/layout/test.md")
   }

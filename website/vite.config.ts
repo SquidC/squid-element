@@ -34,6 +34,7 @@ const viteConfig: UserConfig = {
     vue(),
     vueJsx(),
   ],
+  assetsInclude: ["woff"],
   optimizeDeps: {
     include: ["highlight.js"],
   },
