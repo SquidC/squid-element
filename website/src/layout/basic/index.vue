@@ -4,10 +4,10 @@
       <DocHeader />
     </ElHeader>
     <ElContainer class="page-container">
-      <ElAside width="200px">
+      <ElAside v-if="state.showSider" width="200px">
         <DocSider
           class="component-scroll"
-          :menu-list="menu"
+          :menu-list="state.menu"
           :elconfig="{}"
         />
       </ElAside>
@@ -16,7 +16,7 @@
   </ElContainer>
 </template>
 <script lang="ts">
-import { defineComponent, toRefs, unref, watch, watchEffect, reactive } from "vue";
+import { defineComponent, unref, watch, watchEffect, reactive } from "vue";
 import { useRouter } from "vue-router";
 import { ElHeader, ElAside, ElContainer } from "element-plus";
 import DocHeader from "./header.vue";
@@ -40,28 +40,39 @@ export default defineComponent({
     const { currentRoute } = useRouter();
     const state = reactive({
       headerKey: "",
-      siderKey: "",
       menu: [],
+      showSider: true,
     });
+
     watch(
       () => unref(currentRoute).path,
       path => {
         const arr = path.split("/");
         state.headerKey = "/" + arr[1];
-        state.siderKey = arr[2];
       },
       {
         immediate: true,
       },
     );
     watchEffect(() => {
-      if (state.headerKey === "/components") {
-        state.menu = componentMenu;
-      }else {
-        state.menu = layoutMenu;
+      switch(state.headerKey) {
+        case "/components":
+          state.menu = componentMenu;
+          state.showSider = true;
+          break;
+        case "/layout":
+          state.menu = layoutMenu;
+          state.showSider = true;
+          break;
+        default:
+          state.menu = [];
+          state.showSider = false;
+          break;
       }
     });
-    return { ...toRefs(state) };
+    return {
+      state,
+    };
   },
 });
 </script>
