@@ -1,6 +1,6 @@
 {
   "name": "@squidc/element",
-  "version": "0.0.10",
+  "version": "0.0.12",
   "private": true,
   "description": "A Component Library for Vue3.0",
   "scripts": {
