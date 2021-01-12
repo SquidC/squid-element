@@ -1,6 +1,7 @@
 import { UserConfig } from "vite";
 import { resolve, join } from "path";
 import vueMd from "@squidc/vite-md";
+import vueLayout from "@squidc/vite-layout";
 import vue from "@vitejs/plugin-vue-jsx";
 import vueJsx from "@vitejs/plugin-vue";
 
@@ -31,10 +32,10 @@ const viteConfig: UserConfig = {
   },
   plugins: [
     vueMd(),
+    vueLayout(),
     vue(),
     vueJsx(),
   ],
-  assetsInclude: ["woff"],
   optimizeDeps: {
     include: ["highlight.js"],
   },

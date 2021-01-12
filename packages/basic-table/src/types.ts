@@ -2,7 +2,7 @@
  * 表格列配置项
  * @author Ming07
  */
-export interface TableColumn<T = Record<string, unknown>> {
+export interface TableColumn<T = unknown> {
   /**
    * 表格列标题
    */

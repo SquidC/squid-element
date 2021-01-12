@@ -1952,6 +1952,13 @@
     estree-walker "^1.0.1"
     picomatch "^2.2.2"
 
+"@squidc/vite-layout@^0.0.9":
+  version "0.0.9"
+  resolved "https://registry.npmjs.org/@squidc/vite-layout/-/vite-layout-0.0.9.tgz#687a0a28a66c7de7f5ac7f67a7d1cb6ccbbca23b"
+  integrity sha512-6Qz1Obw9JZAniCNuOhmO+DooLnz8aE69w+hAKrD2h2nJUILcSpsxbX2S927J4/9J8izUGgNONjLVfWlhoMf8pQ==
+  dependencies:
+    "@vue/compiler-sfc" "^3.0.5"
+
 "@squidc/vite-md@0.6.1":
   version "0.6.1"
   resolved "https://registry.npm.taobao.org/@squidc/vite-md/download/@squidc/vite-md-0.6.1.tgz#b2361e0faa6f5aaa8b45b68ad517790717d06fc6"

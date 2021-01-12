@@ -7,13 +7,14 @@ export default [
       {
         path: "/components/directive/draggable",
         name: "draggable",
-        component: () => import("@/docs/components/directive/draggable.md")
-      }
-    ]
+        component: () => import("@/docs/components/directive/draggable.md"),
+      },
+    ],
   },
   {
     path: "/components/link",
     name: "link",
-    component: () => import("@/docs/components/link.md")
-  }
+    component: () => import("@/docs/components/link.md"),
+  },
 ]
+;

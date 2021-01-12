@@ -5,6 +5,7 @@ import BasicForm from "@squid-element/basic-form";
 import BasicTable from "@squid-element/basic-table";
 import Icon from "@squid-element/icon";
 import Operation from "@squid-element/operation";
+import LayoutCrud from "@squid-element/layout-crud";
 
 const version = version_;
 
@@ -13,6 +14,7 @@ const components = [
   BasicTable,
   Icon,
   Operation,
+  LayoutCrud,
 ];
 
 export {
@@ -20,6 +22,7 @@ export {
   BasicTable,
   Icon,
   Operation,
+  LayoutCrud,
 };
 
 

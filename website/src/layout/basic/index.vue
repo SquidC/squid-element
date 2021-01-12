@@ -87,6 +87,7 @@ export default defineComponent({
     border-bottom: 1px solid #dcdfe6;
   }
   .page-container {
+    height: 100%;
     padding-top: 0px;
     overflow: hidden;
     .component-scroll {

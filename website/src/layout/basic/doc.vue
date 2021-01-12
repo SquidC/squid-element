@@ -1,5 +1,5 @@
 <template>
-  <ElMain>
+  <ElMain class="main">
     <ElScrollbar class="doc-scroll">
       <div class="doc-wrap">
         <div class="content-wrap">
@@ -30,6 +30,13 @@ export default defineComponent({
 </script>
 
 <style lang="less" scoped>
+.main {
+  width: 100%;
+  height: 100%;
+}
+:deep(.el-scrollbar__view) {
+  height: 100%;
+}
 .doc-wrap {
   width: 100%;
   height: 100%;
@@ -37,10 +44,12 @@ export default defineComponent({
   box-sizing: border-box;
   overflow: hidden;
   .content-wrap {
-    min-height: 500px;
+    height: 100%;
+    // min-height: 500px;
   }
 
   .content {
+    height: 100%;
     :deep(h3){
         margin: 55px 0 20px;
     }

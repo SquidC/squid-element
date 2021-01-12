@@ -62,5 +62,6 @@ module.exports = {
     }],
     "vue/require-default-prop": "off",
     "vue/html-closing-bracket-spacing": "error",
+    "@typescript-eslint/no-non-null-assertion": "off",
   },
 };
