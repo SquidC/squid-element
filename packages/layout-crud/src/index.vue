@@ -63,6 +63,12 @@
         </div>
       </div>
     </div>
+    <BasicForm
+      :model="formData"
+      :form-items="formItems"
+      :label-width="'50px'"
+      @submit="handleSubmit"
+    />
   </div>
 </template>
 
@@ -72,9 +78,9 @@ import { props as componentProps, __defaultConfig } from "./props";
 import Icon from "@squid-element/icon";
 import Operation, { Tool } from "@squid-element/Operation";
 import BasicTable from "@squid-element/basic-table";
+import BasicForm from "@squid-element/basic-form";
 import { ElPagination } from "element-plus";
-import { useElementSize } from "@squid-element/hooks";
-import { useDebounce } from "@squid-element/hooks";
+import { useElementSize, useDebounce, useModel } from "@squid-element/hooks";
 import mockData from "./mockData";
 
 /**
@@ -88,6 +94,7 @@ export default defineComponent({
     Operation,
     BasicTable,
     ElPagination,
+    BasicForm,
   },
   props: componentProps,
   setup(props) {
@@ -101,6 +108,10 @@ export default defineComponent({
         padding: userConfig.padding,
       } as CSSProperties;
     });
+
+    // 表单
+    const { } = useModel();
+
     // 表格高度
     const tableRef = ref<RefTemplate<HTMLElement>>(null);
     const tableElem = useElementSize(tableRef);
@@ -113,6 +124,12 @@ export default defineComponent({
 
     function handleToolClick(tool: Tool, row?: unknown) {
       userConfig.handleAction(tool, row);
+    }
+
+    // basic-form
+    function handleSubmit(form, done: () => void) {
+      console.log("form", form);
+      done();
     }
 
     return {
@@ -128,6 +145,7 @@ export default defineComponent({
 
       // methods
       handlePage,
+      handleSubmit,
       handleToolClick,
     };
   },

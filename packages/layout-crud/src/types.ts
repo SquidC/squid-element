@@ -1,4 +1,4 @@
-import { TableColumn } from "@squid-element/basic-table";
+import { Model } from "@squid-element/hooks";
 import { LayoutConfig } from "@squidc/vite-layout";
 
 // layout 提供的所有用户接口事件
@@ -53,7 +53,7 @@ interface ServerAPI {
     sel: string;
 }
 
-export interface CrudConfig extends LayoutConfig<TableColumn, ActionType, ServerAPI> {
+export interface CrudConfig<DataStruct> extends LayoutConfig<Model<DataStruct>, ActionType, ServerAPI> {
     /**
      * 布局类型
      * @description space 间隔  |  compact 紧凑
