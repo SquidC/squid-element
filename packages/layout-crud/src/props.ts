@@ -25,6 +25,8 @@ export const __defaultConfig: CrudConfig = {
   rawTools: ["edit", "view", "delete"],
   rawToolsPostion: "body",
   pageLayout: ["prev", "jumper", "total", "next"],
+  controler: "drawer",
+  controlerWidth: "450px",
 
   // 必须
   layout: "Crud",
@@ -41,5 +43,5 @@ export const __defaultConfig: CrudConfig = {
     console.log("handleAction", mode, raw, ids);
   },
   // 页面配置
-  columns: [],
+  columns: {},
 };

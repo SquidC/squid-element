@@ -1,42 +1,48 @@
 <template>
-  <ElForm
-    ref="internalForm"
-    v-bind="props"
-    :model="model"
-  >
-    <template
-      v-for="formItem in formItems"
-      :key="formItem.field"
-    >
-      <ElFormItem
-        v-bind="formItem"
-        :prop="formItem.scope? formItem.field + '.'+ formItem.scope:formItem.field"
+  <div class="form-wrap">
+    <div class="form">
+      <ElForm
+        ref="internalForm"
+        v-bind="props"
+        :model="model"
       >
-        <FormWidget
-          v-if="formItem.scope"
-          v-model="model[formItem.field][formItem.scope]"
-          v-bind="formItem"
-        />
-        <FormWidget
-          v-else
-          v-model="model[formItem.field]"
-          v-bind="formItem"
-        />
-      </ElFormItem>
-    </template>
-    <ElButton
-      type="primary"
-      @click="submitForm"
-    >
-      提交
-    </ElButton>
-    <ElButton
-      type="primary"
-      @click="resetForm"
-    >
-      重置
-    </ElButton>
-  </ElForm>
+        <template
+          v-for="formItem in formItems"
+          :key="formItem.field"
+        >
+          <ElFormItem
+            v-bind="formItem"
+            :prop="formItem.scope? formItem.field + '.'+ formItem.scope:formItem.field"
+          >
+            <FormWidget
+              v-if="formItem.scope"
+              v-model="model[formItem.field][formItem.scope]"
+              v-bind="formItem"
+            />
+            <FormWidget
+              v-else
+              v-model="model[formItem.field]"
+              v-bind="formItem"
+            />
+          </ElFormItem>
+        </template>
+      </ElForm>
+    </div>
+    <div class="btns">
+      <ElButton
+        type="primary"
+        @click="submitForm"
+      >
+        提交
+      </ElButton>
+      <ElButton
+        type="primary"
+        @click="resetForm"
+      >
+        重置
+      </ElButton>
+    </div>
+  </div>
 </template>
 
 
@@ -54,12 +60,12 @@ export default defineComponent({
   props: componentProps,
   setup(props) {
     /**
-         * 内部表单ref
-         */
+     * 内部表单ref
+     */
     const internalForm = ref<RefTemplate<Instance>>(null);
     /**
-         * 提交表单
-         */
+     * 提交表单
+     */
     function submitForm() {
       const el = useRefTemplate<Instance>(internalForm);
       el.validate((isValid, invalidFields) => {
@@ -69,8 +75,8 @@ export default defineComponent({
       });
     }
     /**
-         * 重置表单
-         */
+     * 重置表单
+     */
     function resetForm() {
       const el = useRefTemplate<Instance>(internalForm);
       el.resetFields();
@@ -79,3 +85,20 @@ export default defineComponent({
   },
 });
 </script>
+
+<style lang="less" scoped>
+.form-wrap {
+  height: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  .form {
+    flex: 1 1 10px;
+  }
+  .btns {
+    flex: 0 0 60px;
+    padding: 20px;
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+</style>

@@ -25,7 +25,7 @@
     </div>
     <div class="body">
       <div
-        v-if="userConfig.columns !== undefined && userConfig.columns.length > 0"
+        v-if="model.tableColumns !== undefined && model.tableColumns.length > 0"
         class="table-wrap"
       >
         <template v-if="userConfig.rawToolsPostion === 'body'">
@@ -44,7 +44,7 @@
           class="table-content"
         >
           <BasicTable
-            :columns="userConfig.columns"
+            :columns="model.tableColumns"
             :data-source="dataSource"
             :tools="userConfig.rawTools"
             :height="tableElem.height"
@@ -63,19 +63,50 @@
         </div>
       </div>
     </div>
+    <!-- dialog -->
+    <ElDialog
+      v-if="userConfig.controler === 'dialog'"
+      id="basic-form"
+      v-model="control.dialogVisible"
+      :title="control.title"
+      :width="userConfig.controlerWidth"
+      :before-close="handleClose"
+    >
+      <BasicForm
+        :model="control.form"
+        :form-items="model.formItems"
+        :label-width="'50px'"
+        @submit="handleSubmit"
+      />
+    </ElDialog>
+    <!-- drawer -->
+    <ElDrawer
+      v-if="userConfig.controler === 'drawer'"
+      v-model="control.dialogVisible"
+      :width="userConfig.controlerWidth"
+      :title="control.title"
+      :before-close="handleClose"
+    >
+      <BasicForm
+        :model="control.form"
+        :form-items="model.formItems"
+        :label-width="'50px'"
+        @submit="handleSubmit"
+      />
+    </ElDrawer>
   </div>
 </template>
 
 <script lang="ts">
-import { computed, CSSProperties, defineComponent, ref } from "vue";
-import { props as componentProps, __defaultConfig } from "./props";
+import { computed, CSSProperties, defineComponent, onMounted, reactive, ref } from "vue";
 import Icon from "@squid-element/icon";
 import Operation, { Tool } from "@squid-element/Operation";
 import BasicTable from "@squid-element/basic-table";
-import { ElPagination } from "element-plus";
-import { useElementSize } from "@squid-element/hooks";
-import { useDebounce } from "@squid-element/hooks";
+import { ElPagination, ElDialog, ElDrawer } from "element-plus";
+import { useElementSize, useDebounce, useModel } from "@squid-element/hooks";
+import { props as componentProps, __defaultConfig } from "./props";
 import mockData from "./mockData";
+import { ActionType } from "./types";
 
 /**
  * 增删查改布局组件
@@ -88,11 +119,16 @@ export default defineComponent({
     Operation,
     BasicTable,
     ElPagination,
+    ElDialog,
+    ElDrawer,
+    // BasicForm,
   },
   props: componentProps,
   setup(props) {
     // 用户配置
     const userConfig = Object.assign(__defaultConfig, props.config!);
+    // 表单
+    const { model, initForm } = useModel(userConfig.columns);
     // 请求数据集合
     const dataSource = mockData;
     // 表格样式
@@ -101,26 +137,67 @@ export default defineComponent({
         padding: userConfig.padding,
       } as CSSProperties;
     });
+    // 控制器 增/改
+    const control = reactive({
+      dialogVisible: false,
+      title: "",
+      mode: "",
+      form: initForm(),
+    });
     // 表格高度
     const tableRef = ref<RefTemplate<HTMLElement>>(null);
     const tableElem = useElementSize(tableRef);
-
     // 分页
     const handlePage = useDebounce((value, type) => pageEvent(value, type));
+
     function pageEvent(value: number, type: "pageSize" | "page") {
       userConfig.handleAction(type, value);
     }
 
+    // tool click
     function handleToolClick(tool: Tool, row?: unknown) {
+      switch(tool) {
+        case "add":
+          control.form = initForm();
+          control.dialogVisible = true;
+          control.title = "add";
+          control.mode = "add";
+          break;
+        case "edit":
+          control.form = Object.assign(control.form, row);
+          control.dialogVisible = true;
+          control.title = "edit";
+          control.mode = "add";
+          break;
+      }
       userConfig.handleAction(tool, row);
+    }
+
+    onMounted(() => {
+      // TODO 发送获取数据请求
+    });
+
+    // basic-form
+    function handleSubmit(form, done: () => void) {
+      control.form = form;
+      // TODO 发送请求
+      userConfig.handleAction(control.mode as ActionType, form);
+      done();
+    }
+
+    function handleClose() {
+      control.dialogVisible = false;
+      userConfig.handleAction("close", null);
     }
 
     return {
       // data
       props,
+      model,
       dataSource,
       wrapStyle,
       userConfig,
+      control,
 
       // ref
       tableRef,
@@ -128,13 +205,18 @@ export default defineComponent({
 
       // methods
       handlePage,
+      handleSubmit,
       handleToolClick,
+      handleClose,
     };
   },
 });
 </script>
 
 <style lang="less" scoped>
+:deep(.el-dialog__body) {
+  padding: 30px 20px 0px 20px;
+}
 .crud-layout-wrap {
   width: 100%;
   height: 100%;
