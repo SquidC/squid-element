@@ -74,7 +74,7 @@ export default function useFormWidget(emit: SetupContext["emit"]) {
                 }
                 return <div>input控件只支持string/number类型</div>;
             case "Select":
-                if (typeof value === "number" || typeof value === "string") {
+                if (typeof value === "number" || typeof value === "string" || typeof value === "undefined") {
                     return (
                         <ElSelect modelValue={value} onChange={handleChange} {...formItem}>
                             {{
@@ -85,7 +85,7 @@ export default function useFormWidget(emit: SetupContext["emit"]) {
                 }
                 return <div>select控件只支持string/number类型</div>;
             case "Radio":
-                if (typeof value === "number" || typeof value === "string" || typeof value === "boolean") {
+                if (typeof value === "number" || typeof value === "string" || typeof value === "boolean" || typeof value === "undefined") {
                     return (
                         <ElRadioGroup modelValue={value} onChange={handleChange} {...formItem}>
                             {{
@@ -107,7 +107,7 @@ export default function useFormWidget(emit: SetupContext["emit"]) {
                 }
                 return <div>checkbox控件只支持any[]类型</div>;
             case "Switch":
-                if (typeof value === "number" || typeof value === "string" || typeof value === "boolean") {
+                if (typeof value === "number" || typeof value === "string" || typeof value === "boolean" || typeof value === "undefined") {
                     return <ElSwitch modelValue={value} onChange={handleChange} {...formItem}></ElSwitch>;
                 }
                 return <div>switch控件只支持string/number/boolean类型</div>;

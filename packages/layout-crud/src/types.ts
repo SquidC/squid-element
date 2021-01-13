@@ -2,7 +2,7 @@ import { Model } from "@squid-element/hooks";
 import { LayoutConfig } from "@squidc/vite-layout";
 
 // layout 提供的所有用户接口事件
-type ActionType =
+export type ActionType =
     | "add"
     | "edit"
     | "view"
@@ -17,7 +17,8 @@ type ActionType =
     | "prev"
     | "next"
     | "pageSize"
-    | "page";
+    | "page"
+    | "close"
 
 // 工具栏
 type Tools = "refresh" | "add";
@@ -30,6 +31,9 @@ type Pagination = "prev" | "pager" | "next" | "jumper" | "->" | "total";
 
 // 行工具栏位置
 type RawToolsPostion = "header" | "body";
+
+// 控制器
+type Controler = "drawer" | "dialog";
 
 /**
  * 服务器api
@@ -53,7 +57,8 @@ interface ServerAPI {
     sel: string;
 }
 
-export interface CrudConfig<DataStruct> extends LayoutConfig<Model<DataStruct>, ActionType, ServerAPI> {
+export interface CrudConfig<DataStruct = unknown> extends
+  LayoutConfig<Model<DataStruct>, ActionType, ServerAPI> {
     /**
      * 布局类型
      * @description space 间隔  |  compact 紧凑
@@ -91,4 +96,12 @@ export interface CrudConfig<DataStruct> extends LayoutConfig<Model<DataStruct>, 
      * 分页器
      */
     pageLayout?: Array<Pagination>;
+    /**
+     * 控制器
+     */
+    controler?: Controler;
+    /**
+     * 控制器宽度
+     */
+    controlerWidth?: string;
 }

@@ -25,9 +25,15 @@ interface ScopeOpt {
 /**
  * 控件配置项
  */
-type WidgetOpt = CurrWidget<"Radio"> | CurrWidget<"Input"> | CurrWidget<"Checkbox"> | CurrWidget<"Switch"> | CurrWidget<"Element">;
+type WidgetOpt =
+| CurrWidget<"Radio">
+| CurrWidget<"Input">
+| CurrWidget<"Checkbox">
+| CurrWidget<"Switch">
+| CurrWidget<"Select">
+| CurrWidget<"Element">;
 
-type Scope = WidgetOpt & ScopeOpt;
+type Scope = WidgetOpt & ScopeOpt & Omit<TableColumn<unknown>, "label" | "field">;
 
 /**
  * 过滤控件类型
@@ -44,11 +50,7 @@ type CurrWidget<DynamicType = Widget> = Pick<FilterWidget<FormItem, DynamicType>
 
 export function useModel<DataStruct = {}>(
     formColumns: Model<DataStruct>,
-  ): {
-    tableColumns: TableColumn<DataStruct>[],
-    formItems: FormItem[],
-    form: DataStruct,
-  } {
+  ) {
     const tableColumns = []
     const formItems = []
     let form = {} as DataStruct
@@ -58,16 +60,23 @@ export function useModel<DataStruct = {}>(
       tableColumns.push({
         field: field,
         label: scope.label,
-        // TODO render
+        render: scope.render,
       })
-      formItems.push(scope)
+      formItems.push({
+        ...scope,
+        field: field,
+      })
       // 默认值
-      scope.default && (form[field] = scope.default)
+      scope.default
+       ? (form[field] = scope.default)
+       : (form[field] = undefined)
     })
 
     return {
-      tableColumns,
-      formItems,
-      form
-    }
+      model: reactive({
+        tableColumns,
+        formItems,
+      }),
+      initForm: () => Object.assign({}, form)
+  }
 }

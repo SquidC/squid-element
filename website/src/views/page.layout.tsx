@@ -1,5 +1,4 @@
 import { CrudConfig } from "@squid-element/layout-crud";
-import { TableColumn } from "@squid-element/basic-table";
 import { Model } from "@squid-element/hooks";
 
 interface Student {
@@ -8,34 +7,30 @@ interface Student {
     sex: 1 | 0;
 }
 
-const tableColumns: TableColumn<Student>[] = [
-    { label: "姓名", field: "name" },
-    { label: "年龄", field: "age" },
-    {
-        label: "性别",
-        field: "sex",
-        render(col, row) {
-            return <div>{col === 1 ? "男" : "女"}</div>;
-        },
-    },
-];
-
 const model: Model<Student> = {
     name: {
         label: "姓名",
-        type: "Radio",
-        options: [],
+        type: "Select",
+        options: [
+          {label: "aaa", value: "bbb"}
+        ],
         mode: [],
     },
     sex: {
         label: "性别",
         type: "Radio",
-        options: [],
+        options: [
+          { label: "男", value: 1},
+          { label: "女", value: 0},
+        ],
+        render(col, row) {
+          return <div>{col === 1 ? "男" : "女"}</div>;
+        }
     },
     age: {
-        label: "",
+        label: "年龄",
         type: "Input",
-    },
+    }
 };
 
 const pageConfig: CrudConfig = {
@@ -52,8 +47,9 @@ const pageConfig: CrudConfig = {
     handleAction: (mode, raw, ids) => {
         console.log("handleAction", mode, raw, ids);
     },
+    controler: "dialog",
     // 页面配置
-    columns: tableColumns,
+    columns: model,
 };
 
 export default pageConfig;
