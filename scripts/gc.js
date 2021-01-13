@@ -43,7 +43,7 @@ fs.writeFile(path.resolve(__component, "package.json"),
   "main": "dist/index.js",
   "license": "MIT",
   "peerDependencies": {
-    "element-plus": "^1.0.1-beta.7",
+    "element-plus": "^1.0.1-beta.24",
     "vue": "^3.0.4"
   },
   "devDependencies": {
