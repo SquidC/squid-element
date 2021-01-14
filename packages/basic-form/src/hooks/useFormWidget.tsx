@@ -1,4 +1,13 @@
-import { ElInput, ElSelect, ElOption, ElCheckbox, ElRadio, ElRadioGroup, ElCheckboxGroup, ElSwitch } from "element-plus";
+import {
+  ElInput,
+  ElSelect,
+  ElOption,
+  ElCheckbox,
+  ElRadio,
+  ElRadioGroup,
+  ElCheckboxGroup,
+  ElSwitch
+} from "element-plus";
 import { SetupContext } from "vue";
 import { FormItem, Option } from "../types";
 

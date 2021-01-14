@@ -1,4 +1,4 @@
-import { Model } from "@squid-element/hooks";
+import { Model } from "./useModel";
 import { LayoutConfig } from "@squidc/vite-layout";
 
 // layout 提供的所有用户接口事件

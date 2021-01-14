@@ -1,11 +1,11 @@
 <template>
   <div
-    class="crud-layout-wrap"
-    :class="userConfig.type"
+    class="sc-crud-layout__wrap"
+    :class="`sc-crud-layout__${userConfig.type}`"
     :style="wrapStyle"
   >
-    <div class="header">
-      <div class="left-module">
+    <div class="sc-crud-layout__header">
+      <div class="sc-crud-layout__left-module">
         <Icon
           v-if="userConfig.icon"
           :name="userConfig.icon"
@@ -14,7 +14,7 @@
         />
         <span>{{ userConfig.title }}</span>
       </div>
-      <div class="right-module">
+      <div class="sc-crud-layout__right-module">
         <template v-if="userConfig.rawToolsPostion === 'header'">
           <Operation
             :tools="userConfig.tools"
@@ -23,15 +23,15 @@
         </template>
       </div>
     </div>
-    <div class="body">
+    <div class="sc-crud-layout__body">
       <div
         v-if="model.tableColumns !== undefined && model.tableColumns.length > 0"
-        class="table-wrap"
+        class="sc-crud-layout__table-wrap"
       >
         <template v-if="userConfig.rawToolsPostion === 'body'">
           <div
             v-if="userConfig.tools !== undefined && userConfig.tools.length > 0"
-            class="table-tools"
+            class="sc-crud-layout__table-tools"
           >
             <Operation
               :tools="userConfig.tools"
@@ -41,7 +41,7 @@
         </template>
         <div
           ref="tableRef"
-          class="table-content"
+          class="sc-crud-layout__table-content"
         >
           <BasicTable
             :columns="model.tableColumns"
@@ -52,7 +52,7 @@
             @tool-click="handleToolClick"
           />
         </div>
-        <div class="table-footer">
+        <div class="sc-crud-layout__table-footer">
           <ElPagination
             background
             :layout="userConfig.pageLayout.join(', ')"
@@ -66,7 +66,6 @@
     <!-- dialog -->
     <ElDialog
       v-if="userConfig.controler === 'dialog'"
-      id="basic-form"
       v-model="control.dialogVisible"
       :title="control.title"
       :width="userConfig.controlerWidth"
@@ -102,11 +101,13 @@ import { computed, CSSProperties, defineComponent, onMounted, reactive, ref } fr
 import Icon from "@squid-element/icon";
 import Operation, { Tool } from "@squid-element/Operation";
 import BasicTable from "@squid-element/basic-table";
+import BasicForm from "@squid-element/basic-form";
 import { ElPagination, ElDialog, ElDrawer } from "element-plus";
-import { useElementSize, useDebounce, useModel } from "@squid-element/hooks";
+import { useElementSize, useDebounce } from "@squid-element/hooks";
 import { props as componentProps, __defaultConfig } from "./props";
 import mockData from "./mockData";
 import { ActionType } from "./types";
+import { useCrudLayoutModel } from "./useModel";
 
 /**
  * 增删查改布局组件
@@ -121,14 +122,14 @@ export default defineComponent({
     ElPagination,
     ElDialog,
     ElDrawer,
-    // BasicForm,
+    BasicForm,
   },
   props: componentProps,
   setup(props) {
     // 用户配置
     const userConfig = Object.assign(__defaultConfig, props.config!);
     // 表单
-    const { model, initForm } = useModel(userConfig.columns);
+    const { model, initForm } = useCrudLayoutModel(userConfig.columns as any);
     // 请求数据集合
     const dataSource = mockData;
     // 表格样式
@@ -212,79 +213,3 @@ export default defineComponent({
   },
 });
 </script>
-
-<style lang="less" scoped>
-:deep(.el-dialog__body) {
-  padding: 30px 20px 0px 20px;
-}
-.crud-layout-wrap {
-  width: 100%;
-  height: 100%;
-  background-color: #f0f2f5;
-  display: flex;
-  flex-flow: column nowrap;
-  overflow: hidden;
-  box-sizing: border-box;
-  .header {
-    padding: 20px;
-    background-color: #ffffff;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 16px;
-    font-family: PingFangSC-Medium, PingFang SC;
-    font-weight: 500;
-    color: #333333;
-    .left-module {
-      display: flex;
-      *:nth-child(2) {
-        margin-left: 5px;
-      }
-    }
-  }
-  .body {
-    width: 100%;
-    flex: 1 1 auto;
-    display: flex;
-    background-color: #ffffff;
-    .table-wrap {
-      flex: 1 1;
-      max-width: 100%;
-      background-color: #ffffff;
-      padding: 20px;
-      box-sizing: border-box;
-      overflow: hidden;
-      display: flex;
-      flex-flow: column nowrap;
-
-      .table-tools {
-        font-size: 14px;
-        color: #0088ff;
-        display: flex;
-        justify-content: flex-end;
-        margin-bottom: 10px;
-      }
-
-      .table-content {
-        flex: 1 1 10px;
-        overflow: hidden;
-        box-sizing: border-box;
-        margin-bottom: 10px;
-      }
-
-      .table-footer {
-        display: flex;
-        justify-content: space-between;
-      }
-    }
-  }
-}
-.space {
-  > * {
-    margin-bottom: 15px;
-  }
-  > *:last-child {
-    margin-bottom: 0px;
-  }
-}
-</style>

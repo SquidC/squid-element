@@ -1,6 +1,6 @@
 <template>
-  <div class="form-wrap">
-    <div class="form">
+  <div class="sc-basic-form__wrap">
+    <div class="sc-basic-form__form">
       <ElForm
         ref="internalForm"
         v-bind="props"
@@ -28,7 +28,7 @@
         </template>
       </ElForm>
     </div>
-    <div class="btns">
+    <div class="sc-basic-form__btns">
       <ElButton
         type="primary"
         @click="submitForm"
@@ -85,20 +85,3 @@ export default defineComponent({
   },
 });
 </script>
-
-<style lang="less" scoped>
-.form-wrap {
-  height: 100%;
-  display: flex;
-  flex-flow: column nowrap;
-  .form {
-    flex: 1 1 10px;
-  }
-  .btns {
-    flex: 0 0 60px;
-    padding: 20px;
-    display: flex;
-    justify-content: flex-end;
-  }
-}
-</style>

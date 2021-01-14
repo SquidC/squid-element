@@ -7,3 +7,4 @@ LayoutCrud.install = (app: App): void => {
 
 export default LayoutCrud;
 export * from "./src/types";
+export * from "./src/useModel";

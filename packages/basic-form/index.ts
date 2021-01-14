@@ -1,5 +1,5 @@
 import { App } from "vue";
-import  BasicForm from "./src/index.vue";
+import BasicForm from "./src/index.vue";
 
 BasicForm.install = (app: App): void => {
   app.component(BasicForm.name, BasicForm);
