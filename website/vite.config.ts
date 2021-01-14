@@ -12,6 +12,9 @@ function pathResolve(dir: string) {
 const viteConfig: UserConfig = {
   server: {
     port: 3050,
+    proxy: {
+      "/lang": "http://localhost:4399/assets/",
+    },
   },
   // alias a path to a fs directory
   // 路径别名必须以斜杠开头斜杠结尾
@@ -38,6 +41,7 @@ const viteConfig: UserConfig = {
   ],
   optimizeDeps: {
     include: ["highlight.js"],
+    exclude: ["@squidc/vue-i18next"],
   },
 };
 
