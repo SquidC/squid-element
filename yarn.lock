@@ -1961,8 +1961,8 @@
 
 "@squidc/vite-md@0.6.6":
   version "0.6.6"
-  resolved "https://registry.npmjs.org/@squidc/vite-md/-/vite-md-0.6.6.tgz#0ae8d480fa0cacb28ce00ad1be97de8b461b535f"
-  integrity sha512-Zgc9eTIrh+5zfrzahaApg7quYKLbX6m46VlUSsJPSLx1Ir5UhnWSqxIyYPqqSqpp5DABdNZdqvjzjJoPIqWTWg==
+  resolved "https://registry.npm.taobao.org/@squidc/vite-md/download/@squidc/vite-md-0.6.6.tgz#0ae8d480fa0cacb28ce00ad1be97de8b461b535f"
+  integrity sha1-CujUgPoMrLKM4ArRvpfei0YbU18=
   dependencies:
     "@vue/compiler-sfc" "^3.0.5"
     fs-extra "^9.0.1"
@@ -8471,7 +8471,7 @@ miller-rabin@^4.0.0:
 
 mime-db@1.45.0, "mime-db@>= 1.43.0 < 2":
   version "1.45.0"
-  resolved "https://registry.npm.taobao.org/mime-db/download/mime-db-1.45.0.tgz?cache=0&sync_timestamp=1600831145015&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fmime-db%2Fdownload%2Fmime-db-1.45.0.tgz#cceeda21ccd7c3a745eba2decd55d4b73e7879ea"
+  resolved "https://registry.npm.taobao.org/mime-db/download/mime-db-1.45.0.tgz?cache=0&sync_timestamp=1600831210195&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fmime-db%2Fdownload%2Fmime-db-1.45.0.tgz#cceeda21ccd7c3a745eba2decd55d4b73e7879ea"
   integrity sha1-zO7aIczXw6dF66LezVXUtz54eeo=
 
 mime-types@^2.1.12, mime-types@^2.1.27, mime-types@~2.1.17, mime-types@~2.1.19, mime-types@~2.1.24:
@@ -8547,12 +8547,12 @@ minimist-options@^3.0.1:
 
 minimist@^0.2.0:
   version "0.2.1"
-  resolved "https://registry.npm.taobao.org/minimist/download/minimist-0.2.1.tgz?cache=0&sync_timestamp=1589682820731&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fminimist%2Fdownload%2Fminimist-0.2.1.tgz#827ba4e7593464e7c221e8c5bed930904ee2c455"
+  resolved "https://registry.npm.taobao.org/minimist/download/minimist-0.2.1.tgz#827ba4e7593464e7c221e8c5bed930904ee2c455"
   integrity sha1-gnuk51k0ZOfCIejFvtkwkE7ixFU=
 
 minimist@^1.1.1, minimist@^1.1.3, minimist@^1.2.0, minimist@^1.2.5:
   version "1.2.5"
-  resolved "https://registry.npm.taobao.org/minimist/download/minimist-1.2.5.tgz?cache=0&sync_timestamp=1589682820731&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fminimist%2Fdownload%2Fminimist-1.2.5.tgz#67d66014b66a6a8aaa0c083c5fd58df4e4e97602"
+  resolved "https://registry.npm.taobao.org/minimist/download/minimist-1.2.5.tgz#67d66014b66a6a8aaa0c083c5fd58df4e4e97602"
   integrity sha1-Z9ZgFLZqaoqqDAg8X9WN9OTpdgI=
 
 minipass@^2.3.5, minipass@^2.6.0, minipass@^2.8.6, minipass@^2.9.0:
@@ -12413,10 +12413,10 @@ vinyl@^2.0.0:
     remove-trailing-separator "^1.0.1"
     replace-ext "^1.0.0"
 
-vite@^2.0.0-beta.27:
-  version "2.0.0-beta.27"
-  resolved "https://registry.npm.taobao.org/vite/download/vite-2.0.0-beta.27.tgz#a2e4b3a698e67c89fd963ff51ee5283ec564c65c"
-  integrity sha1-ouSzppjmfIn9lj/1HuUoPsVkxlw=
+vite@2.0.0-beta.9:
+  version "2.0.0-beta.9"
+  resolved "https://registry.npm.taobao.org/vite/download/vite-2.0.0-beta.9.tgz#e8ac2b4e7be97da0da7664da9e1eb22e3ddbd6f6"
+  integrity sha1-6KwrTnvpfaDadmTanh6yLj3b1vY=
   dependencies:
     esbuild "^0.8.26"
     postcss "^8.2.1"
