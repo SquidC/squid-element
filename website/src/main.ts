@@ -19,11 +19,17 @@ import "highlight.js/styles/atom-one-light.css";
 // 指令
 import * as Directives from "@squid-element/directives";
 
+import initI18n from "./i18n";
+import { useTranslation } from "@squidc/vue-i18next";
+
+initI18n("zh");
+const { i18n } = useTranslation();
 const app = createApp(App);
 
 app.use(router);
 app.component("DemoBlock", demoBlock);
-app.use(SCElement);
+i18n.loadNamespaces("component");
+app.use(SCElement, { locale: i18n });
 
 // TODO 加载全部指令
 app.directive("Draggable", Directives.Draggable);
