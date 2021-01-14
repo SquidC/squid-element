@@ -51,11 +51,11 @@ export default[
         name: "test",
         component: () => import("@/views/test.vue"),
       },
-      {
-        path: "/layout-crud",
-        name: "test-layout",
-        component: () => import("@/views/page.layout"),
-      },
+      // {
+      //   path: "/layout-crud",
+      //   name: "test-layout",
+      //   component: () => import("@/views/page.layout"),
+      // },
     ],
   },
 ];

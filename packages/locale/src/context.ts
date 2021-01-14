@@ -1,8 +1,6 @@
 
-import { i18n,TFunction } from "i18next";
-import { Ref } from "vue";
+import { i18n } from "i18next";
 let i18nInstance: i18n;
-let t: Ref<TFunction>;
 
 /**
  * 设置i18next实例

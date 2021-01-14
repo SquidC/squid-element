@@ -29,9 +29,12 @@ const app = createApp(App);
 app.use(router);
 app.component("DemoBlock", demoBlock);
 i18n.loadNamespaces("component");
-app.use(SCElement, { locale: i18n });
+app.use(
+  SCElement,
+  { locale: i18n },
+);
 
-// TODO 加载全部指令
+// 加载全部指令
 app.directive("Draggable", Directives.Draggable);
 
 app.mount("#app");
