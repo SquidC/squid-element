@@ -1,15 +1,18 @@
 import { UserConfig } from "vite";
-import { resolve, join } from "path";
+import path from "path";
 import vueMd from "@squidc/vite-md";
 import vueLayout from "@squidc/vite-layout";
 import vue from "@vitejs/plugin-vue-jsx";
 import vueJsx from "@vitejs/plugin-vue";
 
+console.log(path.posix.join(".", "public"));
+
 function pathResolve(dir: string) {
-  return resolve(__dirname, dir);
+  return path.resolve(__dirname, dir);
 }
 
 const viteConfig: UserConfig = {
+  root: ".",
   server: {
     port: 3050,
   },
@@ -23,7 +26,7 @@ const viteConfig: UserConfig = {
       less: {
         modifyVars: {
           hack: `
-          true;@import "${join(__dirname, "./src/styles/index.less")}";
+          true;@import "${path.join(__dirname, "./src/styles/index.less")}";
           `,
         },
         javascriptEnabled: true,

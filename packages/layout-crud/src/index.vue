@@ -82,7 +82,7 @@
     <ElDrawer
       v-if="userConfig.controler === 'drawer'"
       v-model="control.dialogVisible"
-      :width="userConfig.controlerWidth"
+      :size="userConfig.controlerWidth"
       :title="control.title"
       :before-close="handleClose"
     >

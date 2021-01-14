@@ -1,5 +1,5 @@
 import { CrudConfig } from "@squid-element/layout-crud";
-import { Model } from "@squid-element/hooks";
+import { Model } from "@squid-element/layout-crud";
 
 interface Student {
     name: string;
@@ -47,7 +47,7 @@ const pageConfig: CrudConfig = {
     handleAction: (mode, raw, ids) => {
         console.log("handleAction", mode, raw, ids);
     },
-    controler: "dialog",
+    controler: "drawer",
     // 页面配置
     columns: model,
 };
