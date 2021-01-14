@@ -12,7 +12,7 @@
     >
       <ElMenuItem index="/layout-crud">crud layout</ElMenuItem>
     </ElMenu>
-    <div v-draggable class="test-draggable"></div>
+    <!-- <div v-draggable class="test-draggable"></div> -->
     <ScIcon name="add" />
     <sc-operation :tools="['add']" />
     <ElSelect

@@ -1,13 +1,14 @@
 
-import { i18n } from "i18next";
+import { i18n,TFunction } from "i18next";
+import { Ref } from "vue";
 let i18nInstance: i18n;
+let t: Ref<TFunction>;
 
 /**
  * 设置i18next实例
  * @param instance
  */
 export function setI18n(instance: i18n) {
-  console.log("useL执行", instance);
   i18nInstance = instance;
 }
 
