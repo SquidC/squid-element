@@ -15,8 +15,8 @@ const initI18n = (lng: string) =>
         fallbackLng: "zh",
         // 预加载语言包
         preload: ["zh"],
-        ns: ["common"],
-        defaultNS: "common",
+        ns: ["component"],
+        defaultNS: "component",
         backend: {
           // 语言包加载路径
           loadPath: `${multiLangPath}/{{lng}}/{{ns}}.json`,

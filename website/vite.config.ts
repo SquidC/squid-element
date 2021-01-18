@@ -5,18 +5,15 @@ import vueLayout from "@squidc/vite-layout";
 import vue from "@vitejs/plugin-vue-jsx";
 import vueJsx from "@vitejs/plugin-vue";
 
-console.log(path.posix.join(".", "public"));
-
 function pathResolve(dir: string) {
   return path.resolve(__dirname, dir);
 }
 
 const viteConfig: UserConfig = {
-  root: ".",
   server: {
     port: 3050,
     proxy: {
-      "/lang": "http://localhost:4399/assets/",
+      "/lang": "http://localhost/static/",
     },
   },
   // alias a path to a fs directory
@@ -37,14 +34,13 @@ const viteConfig: UserConfig = {
     },
   },
   plugins: [
-    vueMd(),
-    vueLayout(),
     vue(),
     vueJsx(),
+    vueMd(),
+    vueLayout(),
   ],
   optimizeDeps: {
-    include: ["highlight.js"],
-    exclude: ["@squidc/vue-i18next"],
+    include: ["highlight.js", "@squidc/vue-i18next"],
   },
 };
 
