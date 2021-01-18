@@ -1,7 +1,7 @@
 import { UserConfig } from "vite";
 import path from "path";
 import vueMd from "@squidc/vite-md";
-// import vueLayout from "@squidc/vite-layout";
+import vueLayout from "@squidc/vite-layout";
 import vue from "@vitejs/plugin-vue-jsx";
 import vueJsx from "@vitejs/plugin-vue";
 
@@ -37,10 +37,10 @@ const viteConfig: UserConfig = {
     vue(),
     vueJsx(),
     vueMd(),
-    // vueLayout(),
+    vueLayout(),
   ],
   optimizeDeps: {
-    include: ["highlight.js"],
+    include: ["highlight.js", "@squidc/vue-i18next"],
   },
 };
 
