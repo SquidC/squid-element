@@ -32,15 +32,19 @@
         value="jp"
       />
     </ElSelect>
+    <!-- <div class="wrap"> -->
+
+    <!-- </div> -->
   </div>
 </template>
 <script lang="ts">
-import { defineComponent, ref, unref, watch } from "vue";
+import { defineComponent, reactive, ref, unref, watch } from "vue";
 import { ElMenu, ElMenuItem, ElSelect,ElOption } from "element-plus";
 import { useRouter } from "vue-router";
 import ScIcon from "@squid-element/icon";
 import ScOperation from "@squid-element/operation";
 import { useTranslation } from "@squidc/vue-i18next";
+import { useScrollLoading } from "@squid-element/hooks";
 export default defineComponent({
   components: {
     ScIcon,
@@ -81,7 +85,15 @@ export default defineComponent({
       // i18n.changeLanguage(value)
       // location.reload()
     };
-    return { handleSelect,activeKey, lang, switchLanguage,t };
+
+
+    return {
+      handleSelect,
+      activeKey,
+      lang,
+      switchLanguage,
+      t,
+    };
   },
 });
 </script>
@@ -92,5 +104,4 @@ export default defineComponent({
   height: 100px;
   background: red;
 }
-
 </style>

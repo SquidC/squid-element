@@ -13,12 +13,16 @@ vue draggable指令
     <div v-draggable class="test-draggable"></div>
   </div>
 </template>
-<style>
+<style lang="less">
 .test-draggable-wrap{
   position: relative;
-  height: 200px;
-  background: red;
   overflow: hidden;
+  background: #000;
+  .test-draggable {
+    height: 50px;
+    width: 50px;
+    background: red;
+  }
 }
 </style>
 ```

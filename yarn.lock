@@ -1959,10 +1959,10 @@
   dependencies:
     "@vue/compiler-sfc" "^3.0.5"
 
-"@squidc/vite-md@0.6.6":
-  version "0.6.6"
-  resolved "https://registry.npm.taobao.org/@squidc/vite-md/download/@squidc/vite-md-0.6.6.tgz#0ae8d480fa0cacb28ce00ad1be97de8b461b535f"
-  integrity sha1-CujUgPoMrLKM4ArRvpfei0YbU18=
+"@squidc/vite-md@0.6.8":
+  version "0.6.8"
+  resolved "https://registry.npmjs.org/@squidc/vite-md/-/vite-md-0.6.8.tgz#83d3e0b313beb9aff92e99f9223d2bed38944a25"
+  integrity sha512-YvnJWj36MN/TH7iBirIUVyLGdBrNI3fgq07y47z0Qipm1UOj7m4g/arfpNQ0HDaQiXKf0kp2dLxYprWQxWInOw==
   dependencies:
     "@vue/compiler-sfc" "^3.0.5"
     fs-extra "^9.0.1"

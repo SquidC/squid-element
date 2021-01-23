@@ -12,6 +12,9 @@ module.exports = {
       [
         "project",
         "core",
+        "hooks",
+        "directive",
+        "component",
         "style",
         "docs",
         "ci",
