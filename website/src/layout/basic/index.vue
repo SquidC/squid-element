@@ -89,7 +89,7 @@ export default defineComponent({
   .page-container {
     height: 100%;
     padding-top: 0px;
-    overflow: hidden;
+    overflow-y: scroll;
     .component-scroll {
       height: 100%;
     }
