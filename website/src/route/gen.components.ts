@@ -17,6 +17,11 @@ export default [
     component: () => import("@/layout/basic/doc.vue"),
     children: [
       {
+        path: "/components/hooks/lazyImage",
+        name: "lazyImage",
+        component: () => import("@/docs/components/hooks/lazyImage.md")
+      },
+      {
         path: "/components/hooks/scrollLoading",
         name: "scrollLoading",
         component: () => import("@/docs/components/hooks/scrollLoading.md")

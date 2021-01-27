@@ -10,6 +10,7 @@ export default [
     path: "/components/hooks",
     name: "hooks",
     children: [
+      { path: "/components/hooks/lazyImage", name: "lazyImage.md" },
       {
         path: "/components/hooks/scrollLoading",
         name: "scrollLoading.md"
