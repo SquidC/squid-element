@@ -1,4 +1,4 @@
-import { onMounted, onBeforeUnmount, ref } from "vue";
+import { onMounted, ref } from "vue";
 import { useDebounce } from "./useDebounce";
 
 // 监听到滚动加载数据，数据变化驱动视图改变
@@ -21,11 +21,6 @@ export function useScrollLoading(
         next();
       }
     }));
-  });
-
-  // 去除监听事件
-  onBeforeUnmount(() => {
-    wrap.value.removeEventListener("scroll");
   });
 
 

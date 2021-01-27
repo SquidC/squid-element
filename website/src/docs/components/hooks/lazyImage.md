@@ -28,12 +28,7 @@ import { useLazyImage } from "@squid-element/hooks";
 
 export default defineComponent({
   setup() {
-    const lazyImageElm = reactive([]);
-    const lazyImage = el => {
-      lazyImageElm.push(el);
-    };
-
-    useLazyImage(lazyImageElm, [
+    const lazyImage = useLazyImage([
       "http://localhost:3050/images/ent_slid1.jpg",
       "http://localhost:3050/images/ent_slid2.jpg",
       "http://localhost:3050/images/ent_slid3.jpg",

@@ -1,12 +1,7 @@
-import { onMounted, onUnmounted } from "vue";
+import { onMounted, reactive } from "vue";
 import { useDebounce } from "./useDebounce";
 
-export function useLazyImage(els: HTMLElement[], src: string[], loadingSrc?: string) {
-  let lazyImageObserver = null;
-  if(!loadingSrc) {
-    loadingSrc = "./loading.gif";
-  }
-
+export function useLazyImage(src: string[], loadingSrc?: string) {
   function inViewShow() {
     let len = els.length;
     for(let i = 0; i < len; i++) {
@@ -14,16 +9,16 @@ export function useLazyImage(els: HTMLElement[], src: string[], loadingSrc?: str
       const rect = imageElement.getBoundingClientRect();
       // 出现在视野的时候加载图片
       if(rect.top < document.documentElement.clientHeight) {
-        imageElement.style.background = `background: url('${src[i]}') no-repeat center; background-size: 100%;`;
+        imageElement.setAttribute("style", `background: url('${src[i]}') no-repeat center; background-size: 100%;`);
         // 移除掉已经显示的
         src.splice(i, 1);
         els.splice(i, 1);
         len--;
         i--;
-        // if(els.length === 0) {
-        //   // 如果全部都加载完 则去掉滚动事件监听
-        //   document.removeEventListener("scroll", useDebounce(inViewShow));
-        // }
+        if(els.length === 0) {
+          // 如果全部都加载完 则去掉滚动事件监听
+          document.removeEventListener("scroll", useDebounce(inViewShow));
+        }
       }
     }
   }
@@ -34,7 +29,7 @@ export function useLazyImage(els: HTMLElement[], src: string[], loadingSrc?: str
     });
     if ("IntersectionObserver" in window) {
       // 通过IntersectionObserver api判断图片是否出现在可视区域内，不需要监听Scroll来判断
-      lazyImageObserver = new IntersectionObserver(entries => {
+      const lazyImageObserver = new IntersectionObserver(entries => {
         entries.forEach((entry, idx) => {
           // 如果元素可见
           if (entry.isIntersecting) {
@@ -50,9 +45,18 @@ export function useLazyImage(els: HTMLElement[], src: string[], loadingSrc?: str
         lazyImageObserver.observe(lazyImage);
       });
     } else {
-      // TODO
       inViewShow();
-      document.addEventListener("scroll", useDebounce(inViewShow));
+      document.addEventListener("scroll", useDebounce(inViewShow), true);
     }
   });
+
+  const els = reactive<HTMLElement[]>([]);
+  const lazyImage = el => {
+    el && els.push(el);
+  };
+  if(!loadingSrc) {
+    loadingSrc = "./loading.gif";
+  }
+
+  return lazyImage;
 }
