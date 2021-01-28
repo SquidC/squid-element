@@ -34,18 +34,15 @@ export default defineComponent({
   width: 100%;
   height: 100%;
 }
-:deep(.el-scrollbar__view) {
-  height: 100%;
-}
+
 .doc-wrap {
   width: 100%;
   height: 100%;
-  padding: 0px 50px;
+  padding: 0 50px 30px;
   box-sizing: border-box;
   overflow: hidden;
   .content-wrap {
     height: 100%;
-    // min-height: 500px;
   }
 
   .content {
