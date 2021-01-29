@@ -17,6 +17,11 @@ export default [
     component: () => import("@/layout/basic/doc.vue"),
     children: [
       {
+        path: "/components/hooks/debounce&throttle",
+        name: "debounce&throttle",
+        component: () => import("@/docs/components/hooks/debounce&throttle.md")
+      },
+      {
         path: "/components/hooks/lazyImage",
         name: "lazyImage",
         component: () => import("@/docs/components/hooks/lazyImage.md")

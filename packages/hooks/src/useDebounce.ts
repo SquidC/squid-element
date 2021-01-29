@@ -3,9 +3,9 @@
  * @param handle
  * @param delay
  */
-function debounce<T extends (...args: any[]) => any>(handle: T, delay = 300): T {
+function debounce<T extends (...args: unknown[]) => unknown>(handle: T, delay = 300): T {
   let prevTimer: number | null = null;
-  return ((...args: any[]) => {
+  return ((...args: unknown[]) => {
     if (prevTimer) {
       clearTimeout(prevTimer);
     }
@@ -13,7 +13,7 @@ function debounce<T extends (...args: any[]) => any>(handle: T, delay = 300): T 
       handle(...args);
       prevTimer = null;
     }, delay);
-  }) as any;
+  });
 }
 
 /**

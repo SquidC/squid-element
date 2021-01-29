@@ -10,6 +10,10 @@ export default [
     path: "/components/hooks",
     name: "hooks",
     children: [
+      {
+        path: "/components/hooks/debounce&throttle",
+        name: "debounce&throttle.md"
+      },
       { path: "/components/hooks/lazyImage", name: "lazyImage.md" },
       {
         path: "/components/hooks/scrollLoading",

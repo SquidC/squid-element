@@ -32,29 +32,15 @@
         value="jp"
       />
     </ElSelect>
-    <div class="lazy-image2"></div>
-
-    <div class="wrap">
-      <h1>测试图片懒加载</h1>
-      <h1>测试图片懒加载</h1>
-      <h1>测试图片懒加载</h1>
-      <h1>测试图片懒加载</h1>
-      <h1>测试图片懒加载</h1>
-      <div :ref="lazyImage" class="lazy-image"></div>
-      <div :ref="lazyImage" class="lazy-image"></div>
-      <div :ref="lazyImage" class="lazy-image"></div>
-      <div :ref="lazyImage" class="lazy-image"></div>
-    </div>
   </div>
 </template>
 <script lang="ts">
-import { defineComponent, onMounted, reactive, ref, unref, watch } from "vue";
-import { ElMenu, ElMenuItem, ElSelect,ElOption } from "element-plus";
+import { defineComponent, ref, unref, watch } from "vue";
+import { ElMenu, ElMenuItem, ElSelect, ElOption } from "element-plus";
 import { useRouter } from "vue-router";
 import ScIcon from "@squid-element/icon";
 import ScOperation from "@squid-element/operation";
 import { useTranslation } from "@squidc/vue-i18next";
-import { useLazyImage } from "@squid-element/hooks";
 export default defineComponent({
   components: {
     ScIcon,
@@ -95,16 +81,6 @@ export default defineComponent({
     };
 
 
-    const lazyImageElm = reactive([]);
-    const lazyImage = el => {
-      lazyImageElm.push(el);
-    };
-    useLazyImage(lazyImageElm, [
-      "http://localhost:3050/images/ent_slid1.jpg",
-      "http://localhost:3050/images/ent_slid2.jpg",
-      "http://localhost:3050/images/ent_slid3.jpg",
-      "http://localhost:3050/images/ent_slid4.jpg",
-    ], "http://localhost:3050/loading.gif");
 
     return {
       handleSelect,
@@ -112,7 +88,6 @@ export default defineComponent({
       lang,
       switchLanguage,
       t,
-      lazyImage,
     };
   },
 });
@@ -124,5 +99,6 @@ export default defineComponent({
   height: 100px;
   background: red;
 }
+
 
 </style>
