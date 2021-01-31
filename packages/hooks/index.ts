@@ -7,4 +7,4 @@ export * from "./src/useScrollLoading";
 export * from "./src/usePageReducer";
 export * from "./src/useLazyImage";
 export * from "./src/useReqMax";
-// export * from "./src/useErrorTry";
+export * from "./src/useErrorTry";

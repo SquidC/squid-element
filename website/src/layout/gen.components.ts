@@ -15,7 +15,10 @@ export default [
         name: "debounce&throttle.md"
       },
       { path: "/components/hooks/lazyImage", name: "lazyImage.md" },
-      { path: "/components/hooks/reqMax", name: "reqMax.md" },
+      {
+        path: "/components/hooks/reqMax&errorTry",
+        name: "reqMax&errorTry.md"
+      },
       {
         path: "/components/hooks/scrollLoading",
         name: "scrollLoading.md"

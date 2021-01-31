@@ -27,9 +27,9 @@ export default [
         component: () => import("@/docs/components/hooks/lazyImage.md")
       },
       {
-        path: "/components/hooks/reqMax",
-        name: "reqMax",
-        component: () => import("@/docs/components/hooks/reqMax.md")
+        path: "/components/hooks/reqMax&errorTry",
+        name: "reqMax&errorTry",
+        component: () => import("@/docs/components/hooks/reqMax&errorTry.md")
       },
       {
         path: "/components/hooks/scrollLoading",
